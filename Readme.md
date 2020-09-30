@@ -1,7 +1,7 @@
 # Личный проект «Что посмотреть» [![Build status][travis-image]][travis-url]
 
 * Студент: [Дарья Гомзякова](https://up.htmlacademy.ru/react/5/user/843137).
-* Наставник: `Неизвестно`.
+* Наставник: [Иван Шалагин](https://htmlacademy.ru/profile/id386947).
 
 ---
 

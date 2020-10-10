@@ -7,40 +7,67 @@ import MyListScreen from "../my-list-screen/my-list-screen";
 import FilmScreen from "../film-screen/film-screen";
 import AddReviewScreen from "../add-review-screen/add-review-screen";
 import PlayerScreen from "../player-screen/player-screen";
+import propsForFilms from "../../mocks/props-for-films";
 
 const App = (props) => {
-  const {title, genre, releaseDate} = props;
+  const {films} = props;
 
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/">
-          <MainScreen title={title} genre={genre} releaseDate={releaseDate} />
-        </Route>
+        <Route exact path="/"
+          render={({history}) => (
+            <MainScreen films={films}
+              onFilmCardClick={() => history.push(`/films/6`)}
+              onMyListClick={() => history.push(`/mylist`)}
+              onPlayClick={() => history.push(`/player/6`)}
+            />
+          )}
+        />
         <Route exact path="/login">
           <SignInScreen />
         </Route>
-        <Route exact path="/mylist">
-          <MyListScreen />
-        </Route>
-        <Route exact path="/films/:id">
-          <FilmScreen title={title} genre={genre} releaseDate={releaseDate} />
-        </Route>
-        <Route exact path="/films/:id/review">
-          <AddReviewScreen />
-        </Route>
-        <Route exact path="/player/:id">
-          <PlayerScreen />
-        </Route>
+        <Route exact path="/mylist"
+          render={({history}) => (
+            <MyListScreen films={films}
+              onFilmCardClick={() => history.push(`/films/5`)}
+              onLogoClick={() => history.push(`/`)}
+            />
+          )}
+        />
+        <Route exact path="/films/:id"
+          render={({history}) => (
+            <FilmScreen films={films}
+              onFilmCardClick={() => history.push(`/films/4`)}
+              onLogoClick={() => history.push(`/`)}
+              onAddReviewClick={() => history.push(`/films/2/review`)}
+              onMyListClick={() => history.push(`/mylist`)}
+              onPlayClick={() => history.push(`/player/6`)}
+            />
+          )}
+        />
+        <Route exact path="/films/:id/review"
+          render={({history}) => (
+            <AddReviewScreen films={films}
+              onLogoClick={() => history.push(`/`)}
+              onFilmTitleClick={() => history.push(`/films/1`)}
+            />
+          )}
+        />
+        <Route exact path="/player/:id"
+          render={({history}) => (
+            <PlayerScreen
+              onExitClick={() => history.push(`/`)}
+            />
+          )}
+        />
       </Switch>
     </BrowserRouter>
   );
 };
 
 App.propTypes = {
-  title: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
-  releaseDate: PropTypes.number.isRequired,
+  films: PropTypes.arrayOf(propsForFilms).isRequired,
 };
 
 export default App;

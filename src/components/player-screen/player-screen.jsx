@@ -1,18 +1,21 @@
 import React from "react";
+import PropTypes from "prop-types";
+import {propsForFilms} from "../../types";
 
-const PlayerScreen = () => {
+const PlayerScreen = (props) => {
+  const {onExitClick, films} = props;
   return (
     <React.Fragment>
       <div className="player">
-        <video src="#" className="player__video" poster="img/player-poster.jpg"></video>
+        <video src={films[0].filmPreview} className="player__video" poster="/img/player-poster.jpg"></video>
 
-        <button type="button" className="player__exit">Exit</button>
+        <button type="button" className="player__exit" onClick={onExitClick}>Exit</button>
 
         <div className="player__controls">
           <div className="player__controls-row">
             <div className="player__time">
               <progress className="player__progress" value="30" max="100"></progress>
-              <div className="player__toggler" style="left: 30%;">Toggler</div>
+              <div className="player__toggler" style={{left: 30 + `%`}}>Toggler</div>
             </div>
             <div className="player__time-value">1:30:29</div>
           </div>
@@ -37,6 +40,11 @@ const PlayerScreen = () => {
       </div>
     </React.Fragment>
   );
+};
+
+PlayerScreen.propTypes = {
+  onExitClick: PropTypes.func.isRequired,
+  films: PropTypes.arrayOf(propsForFilms).isRequired
 };
 
 export default PlayerScreen;

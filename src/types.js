@@ -16,4 +16,14 @@ const propsForFilms = PropTypes.shape({
   filmPreview: PropTypes.string.isRequired
 });
 
-export default propsForFilms;
+const propsForReviews = PropTypes.shape({
+  film: PropTypes.string.isRequired,
+  review: PropTypes.arrayOf(PropTypes.shape({
+    reviewText: PropTypes.string.isRequired,
+    reviewRating: PropTypes.number.isRequired,
+    reviewAuthor: PropTypes.string.isRequired,
+    reviewDate: PropTypes.string.isRequired,
+  }))
+});
+
+export {propsForFilms, propsForReviews};

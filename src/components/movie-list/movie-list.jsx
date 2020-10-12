@@ -1,7 +1,7 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import SmallMovieCard from "../small-movie-card/small-movie-card";
-import propsForFilms from "../../mocks/props-for-films";
+import {propsForFilms} from "../../types";
 
 class MovieList extends PureComponent {
   constructor(props) {
@@ -17,9 +17,13 @@ class MovieList extends PureComponent {
     return (
       <div className="catalog__movies-list">
         {films.map((film, i) => (
-          <SmallMovieCard key={`${i}-${film.title}`} film={film} onFilmCardClick={onFilmCardClick} onMouseEnter={() => {
-            this.setState({activeFilm: film.title});
-          }}/>
+          <SmallMovieCard
+            key={`${i}-${film.title}`}
+            film={film}
+            onFilmCardClick={onFilmCardClick}
+            onMouseEnter={() => {
+              this.setState({activeFilm: film.title});
+            }}/>
         ))}
       </div>
     );

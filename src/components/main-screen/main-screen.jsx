@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import propsForFilms from "../../mocks/props-for-films";
+import {propsForFilms} from "../../types";
 import MovieList from "../movie-list/movie-list";
+import FooterScreen from "../footer-screen/footer-screen";
 
 const MainScreen = (props) => {
-  const {films, onFilmCardClick, onMyListClick, onPlayClick} = props;
+  const {films, onFilmCardClick, onMyListClick, onPlayClick, onLogoClick} = props;
 
   return (
     <React.Fragment>
@@ -100,26 +101,16 @@ const MainScreen = (props) => {
             </li>
           </ul>
 
-          <MovieList films={films} onFilmCardClick={onFilmCardClick}/>
+          <MovieList
+            films={films}
+            onFilmCardClick={onFilmCardClick}/>
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
           </div>
         </section>
 
-        <footer className="page-footer">
-          <div className="logo">
-            <a className="logo__link logo__link--light">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </a>
-          </div>
-
-          <div className="copyright">
-            <p>© 2019 What to watch Ltd.</p>
-          </div>
-        </footer>
+        <FooterScreen onLogoClick={onLogoClick}/>
       </div>
     </React.Fragment>
   );
@@ -130,6 +121,7 @@ MainScreen.propTypes = {
   onFilmCardClick: PropTypes.func.isRequired,
   onPlayClick: PropTypes.func.isRequired,
   onMyListClick: PropTypes.func.isRequired,
+  onLogoClick: PropTypes.func.isRequired
 };
 
 export default MainScreen;

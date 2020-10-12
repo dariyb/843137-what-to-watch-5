@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import propsForFilms from "../../mocks/props-for-films";
+import {propsForFilms} from "../../types";
 
 const SmallMovieCard = (props) => {
   const {film, onFilmCardClick, onMouseEnter} = props;

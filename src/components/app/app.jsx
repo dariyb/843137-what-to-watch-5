@@ -7,7 +7,7 @@ import MyListScreen from "../my-list-screen/my-list-screen";
 import FilmScreen from "../film-screen/film-screen";
 import AddReviewScreen from "../add-review-screen/add-review-screen";
 import PlayerScreen from "../player-screen/player-screen";
-import propsForFilms from "../../mocks/props-for-films";
+import {propsForFilms} from "../../types";
 
 const App = (props) => {
   const {films} = props;
@@ -21,12 +21,17 @@ const App = (props) => {
               onFilmCardClick={() => history.push(`/films/6`)}
               onMyListClick={() => history.push(`/mylist`)}
               onPlayClick={() => history.push(`/player/6`)}
+              onLogoClick={() => history.push(`/`)}
             />
           )}
         />
-        <Route exact path="/login">
-          <SignInScreen />
-        </Route>
+        <Route exact path="/login"
+          render={({history}) => (
+            <SignInScreen
+              onLogoClick={() => history.push(`/`)}
+            />
+          )}
+        />
         <Route exact path="/mylist"
           render={({history}) => (
             <MyListScreen films={films}
@@ -57,6 +62,7 @@ const App = (props) => {
         <Route exact path="/player/:id"
           render={({history}) => (
             <PlayerScreen
+              films={films}
               onExitClick={() => history.push(`/`)}
             />
           )}

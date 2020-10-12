@@ -26,7 +26,9 @@ class ReviewForm extends PureComponent {
           <div className="rating__stars">
             {RATINGS.map((rating, i) => (
               <React.Fragment key={i + rating}>
-                <input className="rating__input" id={`star-${rating}`} type="radio" name="rating" value={rating}
+                <input className="rating__input" type="radio" name="rating"
+                  id={`star-${rating}`}
+                  value={rating}
                   checked={currentRating === rating}
                   onChange={(evt) => {
                     this.setState({
@@ -34,7 +36,8 @@ class ReviewForm extends PureComponent {
                     });
                   }}
                 />
-                <label className="rating__label" htmlFor={`star-${rating}`}>Rating {rating}</label>
+                <label className="rating__label"
+                  htmlFor={`star-${rating}`}>Rating {rating}</label>
               </React.Fragment>
             ))}
           </div>

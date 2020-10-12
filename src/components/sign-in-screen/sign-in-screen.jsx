@@ -1,12 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
+import FooterScreen from "../footer-screen/footer-screen";
 
-const SignInScreen = () => {
+const SignInScreen = (props) => {
+  const {onLogoClick} = props;
   return (
     <React.Fragment>
       <div className="user-page">
         <header className="page-header user-page__head">
           <div className="logo">
-            <a href="#" className="logo__link">
+            <a onClick={onLogoClick} className="logo__link">
               <span className="logo__letter logo__letter--1">W</span>
               <span className="logo__letter logo__letter--2">T</span>
               <span className="logo__letter logo__letter--3">W</span>
@@ -34,22 +37,14 @@ const SignInScreen = () => {
           </form>
         </div>
 
-        <footer className="page-footer">
-          <div className="logo">
-            <a href="#" className="logo__link logo__link--light">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </a>
-          </div>
-
-          <div className="copyright">
-            <p>© 2019 What to watch Ltd.</p>
-          </div>
-        </footer>
+        <FooterScreen onLogoClick={onLogoClick}/>
       </div>
     </React.Fragment>
   );
+};
+
+SignInScreen.propTypes = {
+  onLogoClick: PropTypes.func.isRequired,
 };
 
 export default SignInScreen;

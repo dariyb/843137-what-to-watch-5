@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import propsForFilms from "../../mocks/props-for-films";
+import {propsForFilms} from "../../types";
 import MovieList from "../movie-list/movie-list";
+import FooterScreen from "../footer-screen/footer-screen";
 
 const RatingScore = {
   BAD: 0,
@@ -132,22 +133,12 @@ const FilmScreen = (props) => {
         <section className="catalog catalog--like-this">
           <h2 className="catalog__title">More like this</h2>
 
-          <MovieList films={films} onFilmCardClick={onFilmCardClick}/>
+          <MovieList
+            films={films}
+            onFilmCardClick={onFilmCardClick}/>
         </section>
 
-        <footer className="page-footer">
-          <div className="logo">
-            <a onClick={onLogoClick} className="logo__link logo__link--light">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </a>
-          </div>
-
-          <div className="copyright">
-            <p>© 2019 What to watch Ltd.</p>
-          </div>
-        </footer>
+        <FooterScreen onLogoClick={onLogoClick}/>
       </div>
     </React.Fragment>
   );

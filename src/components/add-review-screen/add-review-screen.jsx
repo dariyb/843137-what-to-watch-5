@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import propsForFilms from "../../mocks/props-for-films";
+import {propsForFilms} from "../../types";
 import ReviewForm from "../review-form/review-form";
 
 const AddReviewScreen = (props) => {

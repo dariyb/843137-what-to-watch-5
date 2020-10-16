@@ -12,7 +12,7 @@ export default [
     director: `Wes Andreson`,
     cast: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe`,
     runningTime: `1h 25m`,
-    filmPreview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
 
   },
   {
@@ -28,7 +28,7 @@ export default [
     director: `Curt Russel`,
     cast: `Kim Check, Alan Rickman, Peter Brower`,
     runningTime: `2h 50m`,
-    filmPreview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
 
   },
   {
@@ -44,7 +44,7 @@ export default [
     director: `Wes Kraven`,
     cast: `Billy Moore, Gregory Petch, Amory Stash`,
     runningTime: `1h 30m`,
-    filmPreview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
 
   },
   {
@@ -60,7 +60,7 @@ export default [
     director: `Dan Desk`,
     cast: `Rob Jr, Adgar Roudy, Michael Caine`,
     runningTime: `2h 10m`,
-    filmPreview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
 
   },
   {
@@ -76,7 +76,7 @@ export default [
     director: `Wes Anderson`,
     cast: `Kara Hayward, Edward Norton, Jared Gilman`,
     runningTime: `1h 35m`,
-    filmPreview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
 
   },
   {
@@ -92,7 +92,7 @@ export default [
     director: `Peter Howitt`,
     cast: `Rowan Atkinson, Ben Miller, Natalie Cruz`,
     runningTime: `1h 29m`,
-    filmPreview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
 
   },
   {
@@ -108,7 +108,7 @@ export default [
     director: `Den Abrech`,
     cast: `Leonardo Di Caprio, Stan Voz, Omar Croup`,
     runningTime: `2h 55m`,
-    filmPreview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
 
   },
   {
@@ -124,6 +124,6 @@ export default [
     director: `Sole Crane`,
     cast: `Base Coss, Heil Frank, Goer Varz`,
     runningTime: `1h 56m`,
-    filmPreview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
   }
 ];

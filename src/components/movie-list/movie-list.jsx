@@ -14,6 +14,7 @@ class MovieList extends PureComponent {
 
   render() {
     const {films, onFilmCardClick} = this.props;
+    const {activeFilm} = this.state;
     return (
       <div className="catalog__movies-list">
         {films.map((film, i) => (
@@ -21,9 +22,14 @@ class MovieList extends PureComponent {
             key={`${i}-${film.title}`}
             film={film}
             onFilmCardClick={onFilmCardClick}
+            isVideoPlaying={activeFilm === film.title}
             onMouseEnter={() => {
               this.setState({activeFilm: film.title});
-            }}/>
+            }}
+            onMouseLeave={() => {
+              this.setState({activeFilm: ``});
+            }}
+          />
         ))}
       </div>
     );

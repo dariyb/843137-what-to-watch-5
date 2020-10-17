@@ -3,38 +3,29 @@ import PropTypes from "prop-types";
 import {propsForFilms} from "../../types";
 import MovieList from "../movie-list/movie-list";
 import FooterScreen from "../footer-screen/footer-screen";
+import MovieOverview from "../movie-overview/movie-overview";
+import MovieDetails from "../movie-details/movie-details";
+import MoviewReviews from "../movie-reviews/movie-reviews";
+import Tabs, {TABS} from "../tabs/tabs";
 
-const RatingScore = {
-  BAD: 0,
-  NORMAL: 3,
-  GOOD: 5,
-  VERY_GOOD: 8,
-  AWESOME: 10
-};
+const SIMILAR_FILMS = 4;
 
 const FilmScreen = (props) => {
   const {films, onFilmCardClick, onLogoClick, onAddReviewClick, onPlayClick, onMyListClick} = props;
-  const getTextScore = (ratingScore) => {
-    let textScore = null;
-    switch (true) {
-      case ratingScore >= RatingScore.BAD && ratingScore < RatingScore.NORMAL:
-        textScore = `Bad`;
-        break;
-      case ratingScore >= RatingScore.NORMAL && ratingScore < RatingScore.GOOD:
-        textScore = `Normal`;
-        break;
-      case ratingScore >= RatingScore.GOOD && ratingScore < RatingScore.VERY_GOOD:
-        textScore = `Good`;
-        break;
-      case ratingScore >= RatingScore.VERY_GOOD && ratingScore < RatingScore.AWESOME:
-        textScore = `Very Good`;
-        break;
-      case ratingScore === RatingScore.AWESOME:
-        textScore = `Awesome`;
-        break;
+
+  const getMoreLikeThis = (movies, currentFilm) => {
+    const similarMovies = movies.filter((movie) => movie.genre === currentFilm.genre);
+
+    if (similarMovies.length === 0) {
+      return movies.slice(0, SIMILAR_FILMS);
     }
-    return textScore;
+    if (similarMovies.length > SIMILAR_FILMS) {
+      return similarMovies.slice(0, SIMILAR_FILMS);
+    }
+    return similarMovies;
   };
+
+  const similarGenreFilms = getMoreLikeThis(films, films[0]);
   return (
     <React.Fragment>
       <section className="movie-card movie-card--full">
@@ -95,35 +86,18 @@ const FilmScreen = (props) => {
             </div>
 
             <div className="movie-card__desc">
-              <nav className="movie-nav movie-card__nav">
-                <ul className="movie-nav__list">
-                  <li className="movie-nav__item movie-nav__item--active">
-                    <a href="#" className="movie-nav__link">Overview</a>
-                  </li>
-                  <li className="movie-nav__item">
-                    <a href="#" className="movie-nav__link">Details</a>
-                  </li>
-                  <li className="movie-nav__item">
-                    <a href="#" className="movie-nav__link">Reviews</a>
-                  </li>
-                </ul>
-              </nav>
-
-              <div className="movie-rating">
-                <div className="movie-rating__score">{films[0].rating}</div>
-                <p className="movie-rating__meta">
-                  <span className="movie-rating__level">{getTextScore(films[0].rating.toFixed())}</span>
-                  <span className="movie-rating__count">{films[0].ratingAmount} ratings</span>
-                </p>
-              </div>
-
-              <div className="movie-card__text">
-                {films[0].description}
-
-                <p className="movie-card__director"><strong>Director:{films[0].director}</strong></p>
-
-                <p className="movie-card__starring"><strong>Starring: {films[0].cast} and other</strong></p>
-              </div>
+              <Tabs renderNavTab={(activeTab) => {
+                switch (activeTab) {
+                  case TABS.OVERVIEW:
+                    return <MovieOverview films={films}/>;
+                  case TABS.DETAILS:
+                    return <MovieDetails films={films}/>;
+                  case TABS.REVIEWS:
+                    return <MoviewReviews films={films}/>;
+                }
+                return null;
+              }}
+              />
             </div>
           </div>
         </div>
@@ -134,7 +108,7 @@ const FilmScreen = (props) => {
           <h2 className="catalog__title">More like this</h2>
 
           <MovieList
-            films={films}
+            films={similarGenreFilms}
             onFilmCardClick={onFilmCardClick}/>
         </section>
 

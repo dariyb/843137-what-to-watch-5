@@ -13,7 +13,20 @@ export default [
     cast: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe`,
     runningTime: `1h 25m`,
     filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
-
+    review: [
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 8.0,
+        reviewAuthor: `Kate Spade`,
+        reviewDate: `December 13,2014`,
+      },
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 7.6,
+        reviewAuthor: `Alek Blake`,
+        reviewDate: `January 5, 2015`,
+      }
+    ]
   },
   {
     title: `Fantastic Beasts`,
@@ -29,7 +42,20 @@ export default [
     cast: `Kim Check, Alan Rickman, Peter Brower`,
     runningTime: `2h 50m`,
     filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
-
+    review: [
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 10.0,
+        reviewAuthor: `HP`,
+        reviewDate: `June 4, 2018`,
+      },
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 8.8,
+        reviewAuthor: `Hermione G`,
+        reviewDate: `June 8, 2018`,
+      }
+    ]
   },
   {
     title: `Zombi Jack`,
@@ -45,7 +71,20 @@ export default [
     cast: `Billy Moore, Gregory Petch, Amory Stash`,
     runningTime: `1h 30m`,
     filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
-
+    review: [
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 5.0,
+        reviewAuthor: `Carmen Diablo`,
+        reviewDate: `September 2, 2020`,
+      },
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 4.3,
+        reviewAuthor: `Voine Brank`,
+        reviewDate: `Oktober 10, 2020`,
+      }
+    ]
   },
   {
     title: `Mind Hunter`,
@@ -61,7 +100,20 @@ export default [
     cast: `Rob Jr, Adgar Roudy, Michael Caine`,
     runningTime: `2h 10m`,
     filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
-
+    review: [
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 5.0,
+        reviewAuthor: `Stacy Brao`,
+        reviewDate: `May 6, 2005`,
+      },
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 9.5,
+        reviewAuthor: `Lily Gram`,
+        reviewDate: `May 20, 2005`,
+      }
+    ]
   },
   {
     title: `Moonrise Kingdom`,
@@ -77,7 +129,20 @@ export default [
     cast: `Kara Hayward, Edward Norton, Jared Gilman`,
     runningTime: `1h 35m`,
     filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
-
+    review: [
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 8.1,
+        reviewAuthor: `Nick Hudson`,
+        reviewDate: `March 6, 2012`,
+      },
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 4.2,
+        reviewAuthor: `Bonny Staff`,
+        reviewDate: `July 30, 2014`,
+      }
+    ]
   },
   {
     title: `Johnny English`,
@@ -93,7 +158,20 @@ export default [
     cast: `Rowan Atkinson, Ben Miller, Natalie Cruz`,
     runningTime: `1h 29m`,
     filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
-
+    review: [
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 6.2,
+        reviewAuthor: `Rose Dench`,
+        reviewDate: `July 6, 2010`,
+      },
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 6.0,
+        reviewAuthor: `Den House`,
+        reviewDate: `August 20, 2013`,
+      }
+    ]
   },
   {
     title: `Revenant`,
@@ -109,7 +187,20 @@ export default [
     cast: `Leonardo Di Caprio, Stan Voz, Omar Croup`,
     runningTime: `2h 55m`,
     filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
-
+    review: [
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 10.0,
+        reviewAuthor: `Marcy New`,
+        reviewDate: `October 10, 2019`,
+      },
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 9.5,
+        reviewAuthor: `Kiky Palmer`,
+        reviewDate: `October 25, 2019`,
+      }
+    ]
   },
   {
     title: `Snatch`,
@@ -125,5 +216,19 @@ export default [
     cast: `Base Coss, Heil Frank, Goer Varz`,
     runningTime: `1h 56m`,
     filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    review: [
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 7.3,
+        reviewAuthor: `Blackey Grey`,
+        reviewDate: `Novermber 8, 2017`,
+      },
+      {
+        reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
+        reviewRating: 5.1,
+        reviewAuthor: `Jojo Nick`,
+        reviewDate: `November 25, 2017`,
+      }
+    ]
   }
 ];

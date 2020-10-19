@@ -1,26 +1,38 @@
 import React, {PureComponent, Fragment} from "react";
 import PropTypes from "prop-types";
-
-export const TABS = {
-  OVERVIEW: `Overview`,
-  DETAILS: `Details`,
-  REVIEWS: `Reviews`
-};
+import {propsForFilms} from "../../types";
+// import {withActiveTab} from "../../hocs/with-tabs/with-tabs";
+import {TABS} from "../../utils";
+import MovieOverview from "../movie-overview/movie-overview";
+import MovieDetails from "../movie-details/movie-details";
+import MoviewReviews from "../movie-reviews/movie-reviews";
 
 const tabs = [`Overview`, `Details`, `Reviews`];
+
 
 class Tabs extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = {
-      activeTab: TABS.OVERVIEW,
-    };
+    // this.state = {
+    //   activeTab: TABS.OVERVIEW,
+    // };
   }
 
   render() {
     const {activeTab} = this.state;
-    const {renderNavTab} = this.props;
+
+    const showActiveTab = (activeNavTab, movies) => {
+      switch (activeTab) {
+        case TABS.OVERVIEW:
+          return <MovieOverview films={movies}/>;
+        case TABS.DETAILS:
+          return <MovieDetails films={movies}/>;
+        case TABS.REVIEWS:
+          return <MoviewReviews films={movies}/>;
+      }
+      return null;
+    };
 
     return (
       <Fragment>
@@ -39,14 +51,14 @@ class Tabs extends PureComponent {
             )}
           </ul>
         </nav>
-        {renderNavTab(activeTab)}
+        {showActiveTab(activeTab)}
       </Fragment>
     );
   }
 }
 
 Tabs.propTypes = {
-  renderNavTab: PropTypes.func.isRequired,
+  films: PropTypes.arrayOf(propsForFilms).isRequired,
 };
 
 export default Tabs;

@@ -3,10 +3,14 @@ import PropTypes from "prop-types";
 import {propsForFilms} from "../../types";
 import MovieList from "../movie-list/movie-list";
 import FooterScreen from "../footer-screen/footer-screen";
-import MovieOverview from "../movie-overview/movie-overview";
-import MovieDetails from "../movie-details/movie-details";
-import MoviewReviews from "../movie-reviews/movie-reviews";
-import Tabs, {TABS} from "../tabs/tabs";
+import {withActiveTab} from "../../hocs/with-tabs/with-tabs";
+import Tabs from "../tabs/tabs";
+// import MovieOverview from "../movie-overview/movie-overview";
+// import MovieDetails from "../movie-details/movie-details";
+// import MoviewReviews from "../movie-reviews/movie-reviews";
+// import {TABS} from "../../utils";
+
+const TabsWrapper = withActiveTab(Tabs);
 
 const SIMILAR_FILMS = 4;
 
@@ -86,17 +90,7 @@ const FilmScreen = (props) => {
             </div>
 
             <div className="movie-card__desc">
-              <Tabs renderNavTab={(activeTab) => {
-                switch (activeTab) {
-                  case TABS.OVERVIEW:
-                    return <MovieOverview films={films}/>;
-                  case TABS.DETAILS:
-                    return <MovieDetails films={films}/>;
-                  case TABS.REVIEWS:
-                    return <MoviewReviews films={films}/>;
-                }
-                return null;
-              }}
+              <TabsWrapper
               />
             </div>
           </div>
@@ -125,6 +119,7 @@ FilmScreen.propTypes = {
   onAddReviewClick: PropTypes.func.isRequired,
   onPlayClick: PropTypes.func.isRequired,
   onMyListClick: PropTypes.func.isRequired,
+  renderNavTab: PropTypes.func.isRequired,
 };
 
 export default FilmScreen;

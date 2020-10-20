@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import SmallMovieCard from "../small-movie-card/small-movie-card";
 import ShowMoreButton from "../show-more-button/show-more-button";
 import {propsForFilms} from "../../types";
+import {INITIAL_NUMBER_OF_FILMS} from "../../utils";
 
 class MovieList extends PureComponent {
   constructor(props) {
@@ -10,20 +11,19 @@ class MovieList extends PureComponent {
 
     this.state = {
       activeFilm: ``,
-      activeNumberOfFilms: 8,
+      activeNumberOfFilms: INITIAL_NUMBER_OF_FILMS,
     };
 
     this.showMoreFilms = this.showMoreFilms.bind(this);
   }
 
   showMoreFilms() {
-    this.setState({activeNumberOfFilms: this.state.activeNumberOfFilms + 8});
+    this.setState({activeNumberOfFilms: this.state.activeNumberOfFilms + INITIAL_NUMBER_OF_FILMS});
   }
 
   render() {
     const {films, onFilmCardClick} = this.props;
     const {activeFilm} = this.state;
-    debugger;
     return (
       <Fragment>
         <div className="catalog__movies-list">
@@ -55,7 +55,6 @@ class MovieList extends PureComponent {
 MovieList.propTypes = {
   onFilmCardClick: PropTypes.func.isRequired,
   films: PropTypes.arrayOf(propsForFilms).isRequired,
-  // showMoreFilms: PropTypes.func.isRequired,
 };
 
 export default MovieList;

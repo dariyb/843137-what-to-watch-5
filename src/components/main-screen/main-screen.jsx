@@ -6,7 +6,6 @@ import FooterScreen from "../footer-screen/footer-screen";
 import withActiveTab from "../../hocs/with-tabs/with-tabs";
 import GenresList from "../genres-list/genres-list";
 import {tabsFilmGenres, getFilmsByGenre} from "../../utils";
-// import ShowMoreButton from "../show-more-button/show-more-button";
 
 const GenresListWrapper = withActiveTab(GenresList);
 

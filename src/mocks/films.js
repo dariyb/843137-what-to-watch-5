@@ -1,7 +1,7 @@
 export default [
   {
     title: `The Grand Budapest Hotel`,
-    genre: `Drama`,
+    genre: `Dramas`,
     releaseDate: 2014,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
     preview: `/img/pulp-fiction.jpg`,
@@ -30,7 +30,7 @@ export default [
   },
   {
     title: `Fantastic Beasts`,
-    genre: `Fantasy`,
+    genre: `Kids&Family`,
     releaseDate: 2018,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
     preview: `/img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
@@ -88,7 +88,7 @@ export default [
   },
   {
     title: `Mind Hunter`,
-    genre: `Mystery`,
+    genre: `Sci-Fi`,
     releaseDate: 2005,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
     preview: `/img/mindhunter.jpg`,
@@ -146,7 +146,7 @@ export default [
   },
   {
     title: `Johnny English`,
-    genre: `Comedy`,
+    genre: `Comedies`,
     releaseDate: 2003,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
     preview: `/img/johnny-english.jpg`,
@@ -175,7 +175,7 @@ export default [
   },
   {
     title: `Revenant`,
-    genre: `Drama`,
+    genre: `Dramas`,
     releaseDate: 2019,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
     preview: `/img/revenant.jpg`,
@@ -204,7 +204,7 @@ export default [
   },
   {
     title: `Snatch`,
-    genre: `Thriller`,
+    genre: `Thrillers`,
     releaseDate: 2017,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
     preview: `/img/snatch.jpg`,

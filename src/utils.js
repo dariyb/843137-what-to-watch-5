@@ -1,3 +1,5 @@
+const INITIAL_NUMBER_OF_FILMS = 8;
+
 const RatingScore = {
   BAD: 0,
   NORMAL: 3,
@@ -49,4 +51,4 @@ const getFilmsByGenre = (films, genre) => {
 };
 
 
-export {getTextScore, TABS, tabsFilmScreen, extend, tabsFilmGenres, getFilmsByGenre};
+export {getTextScore, TABS, tabsFilmScreen, extend, tabsFilmGenres, getFilmsByGenre, INITIAL_NUMBER_OF_FILMS};

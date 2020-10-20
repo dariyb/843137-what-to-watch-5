@@ -80,13 +80,11 @@ const MainScreen = (props) => {
               const accurateFilms = getFilmsByGenre(movies, activeFilter);
               return <MovieList
                 films={accurateFilms}
-                onFilmCardClick={onFilmCardClick}/>;
+                onFilmCardClick={onFilmCardClick}
+              />;
             }}
           />
 
-          <div className="catalog__more">
-            <button className="catalog__button" type="button">Show more</button>
-          </div>
         </section>
 
         <FooterScreen onLogoClick={onLogoClick}/>
@@ -102,5 +100,6 @@ MainScreen.propTypes = {
   onMyListClick: PropTypes.func.isRequired,
   onLogoClick: PropTypes.func.isRequired
 };
+
 
 export default MainScreen;

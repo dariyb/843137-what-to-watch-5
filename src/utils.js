@@ -34,4 +34,19 @@ const TABS = {
   REVIEWS: `Reviews`
 };
 
-export {getTextScore, TABS};
+const tabsFilmScreen = [`Overview`, `Details`, `Reviews`];
+const tabsFilmGenres = [`All genres`, `Comedies`, `Crime`, `Documentary`, `Dramas`, `Horror`, `Kids&Family`, `Romance`, `Sci-Fi`, `Thrillers`];
+
+const extend = (a, b) => {
+  return Object.assign({}, a, b);
+};
+
+const getFilmsByGenre = (films, genre) => {
+  if (genre === tabsFilmGenres[0]) {
+    return films;
+  }
+  return films.filter((film) => film.genre === genre);
+};
+
+
+export {getTextScore, TABS, tabsFilmScreen, extend, tabsFilmGenres, getFilmsByGenre};

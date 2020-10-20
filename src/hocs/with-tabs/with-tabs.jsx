@@ -1,9 +1,5 @@
 import React, {PureComponent} from 'react';
-import {TABS} from "../../utils";
-// import Tabs from "../../components/tabs/tabs";
-// import MovieOverview from "../movie-overview/movie-overview";
-// import MovieDetails from "../movie-details/movie-details";
-// import MoviewReviews from "../movie-reviews/movie-reviews";
+import PropTypes from "prop-types";
 
 const withActiveTab = (Component) => {
   class WithActiveTab extends PureComponent {
@@ -11,7 +7,7 @@ const withActiveTab = (Component) => {
       super(props);
 
       this.state = {
-        activeTab: TABS.OVERVIEW,
+        activeTab: props.variantTabs[0],
       };
     }
 
@@ -26,7 +22,9 @@ const withActiveTab = (Component) => {
       />;
     }
   }
-  WithActiveTab.propTypes = {};
+  WithActiveTab.propTypes = {
+    variantTabs: PropTypes.array.isRequired,
+  };
 
   return WithActiveTab;
 };

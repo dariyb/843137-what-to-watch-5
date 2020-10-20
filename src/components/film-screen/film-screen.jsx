@@ -5,10 +5,10 @@ import MovieList from "../movie-list/movie-list";
 import FooterScreen from "../footer-screen/footer-screen";
 import withActiveTab from "../../hocs/with-tabs/with-tabs";
 import Tabs from "../tabs/tabs";
-// import MovieOverview from "../movie-overview/movie-overview";
-// import MovieDetails from "../movie-details/movie-details";
-// import MoviewReviews from "../movie-reviews/movie-reviews";
-// import {TABS} from "../../utils";
+import MovieOverview from "../movie-overview/movie-overview";
+import MovieDetails from "../movie-details/movie-details";
+import MoviewReviews from "../movie-reviews/movie-reviews";
+import {TABS, tabsFilmScreen} from "../../utils";
 
 const TabsWrapper = withActiveTab(Tabs);
 
@@ -92,6 +92,18 @@ const FilmScreen = (props) => {
             <div className="movie-card__desc">
               <TabsWrapper
                 films={films}
+                variantTabs={tabsFilmScreen}
+                showActiveTab = {(activeNavTab, movies) => {
+                  switch (activeNavTab) {
+                    case TABS.OVERVIEW:
+                      return <MovieOverview films={movies}/>;
+                    case TABS.DETAILS:
+                      return <MovieDetails films={movies}/>;
+                    case TABS.REVIEWS:
+                      return <MoviewReviews films={movies}/>;
+                  }
+                  return null;
+                }}
               />
             </div>
           </div>

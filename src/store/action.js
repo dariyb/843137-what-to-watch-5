@@ -1,6 +1,7 @@
 const ActionType = {
   CHANGE_GENRE: `CHANGE_GENRE`,
   GET_CURRENT_GENRE_FILMS_LIST: `GET_CURRENT_GENRE_FILMS_LIST`,
+  SHOW_MORE: `SHOW_MORE`,
 };
 
 const ActionCreator = {
@@ -11,6 +12,10 @@ const ActionCreator = {
   filterFilmsList: (filter) => ({
     type: ActionType.GET_CURRENT_GENRE_FILMS_LIST,
     payload: filter,
+  }),
+  showMoreFilms: (shownCards) => ({
+    type: ActionType.SHOW_MORE,
+    payload: shownCards
   })
 };
 

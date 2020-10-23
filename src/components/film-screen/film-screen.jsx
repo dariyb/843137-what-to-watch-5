@@ -9,6 +9,9 @@ import MovieOverview from "../movie-overview/movie-overview";
 import MovieDetails from "../movie-details/movie-details";
 import MoviewReviews from "../movie-reviews/movie-reviews";
 import {TABS, tabsFilmScreen} from "../../utils";
+import withMovieList from "../../hocs/with-movie-list/with-movie-list";
+
+const MovieListMyListWrapper = withMovieList(MovieList);
 
 const TabsWrapper = withActiveTab(Tabs);
 
@@ -114,7 +117,7 @@ const FilmScreen = (props) => {
         <section className="catalog catalog--like-this">
           <h2 className="catalog__title">More like this</h2>
 
-          <MovieList
+          <MovieListMyListWrapper
             films={similarGenreFilms}
             onFilmCardClick={onFilmCardClick}/>
         </section>

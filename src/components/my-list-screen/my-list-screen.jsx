@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import {propsForFilms} from "../../types";
 import MovieList from "../movie-list/movie-list";
 import FooterScreen from "../footer-screen/footer-screen";
+import withMovieList from "../../hocs/with-movie-list/with-movie-list";
+
+const MovieListMyListWrapper = withMovieList(MovieList);
 
 const MyListScreen = (props) => {
   const {films, onFilmCardClick, onLogoClick} = props;
@@ -30,7 +33,7 @@ const MyListScreen = (props) => {
         <section className="catalog">
           <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-          <MovieList
+          <MovieListMyListWrapper
             films={films}
             onFilmCardClick={onFilmCardClick}/>
         </section>

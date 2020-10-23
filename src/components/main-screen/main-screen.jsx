@@ -6,8 +6,11 @@ import FooterScreen from "../footer-screen/footer-screen";
 import withActiveTab from "../../hocs/with-tabs/with-tabs";
 import GenresList from "../genres-list/genres-list";
 import {tabsFilmGenres, getFilmsByGenre} from "../../utils";
+import withButton from "../../hocs/with-button/with-button";
+import withMovieList from "../../hocs/with-movie-list/with-movie-list";
 
 const GenresListWrapper = withActiveTab(GenresList);
+const MovieListWarpper = withButton(withMovieList(MovieList));
 
 const MainScreen = (props) => {
   const {films, onFilmCardClick, onMyListClick, onPlayClick, onLogoClick} = props;
@@ -78,7 +81,7 @@ const MainScreen = (props) => {
             variantTabs={tabsFilmGenres}
             filterFilmsList={(activeFilter, movies) => {
               const accurateFilms = getFilmsByGenre(movies, activeFilter);
-              return <MovieList
+              return <MovieListWarpper
                 films={accurateFilms}
                 onFilmCardClick={onFilmCardClick}
               />;

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import SmallMovieCard from "../small-movie-card/small-movie-card";
 import {propsForFilms} from "../../types";
 
-const MovieList = React.memo(function MovieList(props) {
+const MovieList = (props) => {
   const {films, onFilmCardClick, activeNumberOfFilms, onMouseEnter, onMouseLeave} = props;
 
   return (
@@ -16,18 +16,14 @@ const MovieList = React.memo(function MovieList(props) {
               film={film}
               onFilmCardClick={onFilmCardClick}
               isVideoPlaying={props.activeFilm === film.title}
-              onMouseEnter={() => {
-                onMouseEnter(film);
-              }}
-              onMouseLeave={() => {
-                onMouseLeave();
-              }}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
             />
           ))}
       </div>
     </Fragment>
   );
-});
+};
 
 MovieList.propTypes = {
   onFilmCardClick: PropTypes.func.isRequired,

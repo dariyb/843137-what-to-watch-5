@@ -11,7 +11,7 @@ const SmallMovieCard = (props) => {
       <div className="small-movie-card__image"
         onMouseOver = {(evt) => {
           evt.preventDefault();
-          onMouseEnter(film.title);
+          onMouseEnter(film);
         }}
         onMouseOut = {(evt) => {
           evt.preventDefault();
@@ -43,4 +43,4 @@ SmallMovieCard.propTypes = {
   film: propsForFilms
 };
 
-export default SmallMovieCard;
+export default React.memo(SmallMovieCard);

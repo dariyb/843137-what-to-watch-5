@@ -2,6 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import {propsForFilms} from "../../types";
 import ReviewForm from "../review-form/review-form";
+import withReviewForm from "../../hocs/with-review-form/with-review-form";
+
+const ReviewFormWrapper = withReviewForm(ReviewForm);
 
 const AddReviewScreen = (props) => {
   const {films, onLogoClick, onFilmTitleClick} = props;
@@ -48,7 +51,7 @@ const AddReviewScreen = (props) => {
       </div>
 
       <div className="add-review">
-        <ReviewForm />
+        <ReviewFormWrapper />
       </div>
 
     </section>

@@ -1,6 +1,7 @@
 export default [
   {
     title: `The Grand Budapest Hotel`,
+    id: 1,
     genre: `Dramas`,
     releaseDate: 2014,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
@@ -30,6 +31,7 @@ export default [
   },
   {
     title: `Fantastic Beasts`,
+    id: 2,
     genre: `Kids&Family`,
     releaseDate: 2018,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
@@ -59,6 +61,7 @@ export default [
   },
   {
     title: `Zombi Jack`,
+    id: 3,
     genre: `Horror`,
     releaseDate: 2020,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
@@ -88,6 +91,7 @@ export default [
   },
   {
     title: `Mind Hunter`,
+    id: 4,
     genre: `Sci-Fi`,
     releaseDate: 2005,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
@@ -117,6 +121,7 @@ export default [
   },
   {
     title: `Moonrise Kingdom`,
+    id: 5,
     genre: `Romance`,
     releaseDate: 2012,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
@@ -146,6 +151,7 @@ export default [
   },
   {
     title: `Johnny English`,
+    id: 6,
     genre: `Comedies`,
     releaseDate: 2003,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
@@ -175,6 +181,7 @@ export default [
   },
   {
     title: `Revenant`,
+    id: 7,
     genre: `Dramas`,
     releaseDate: 2019,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
@@ -204,6 +211,7 @@ export default [
   },
   {
     title: `Snatch`,
+    id: 8,
     genre: `Thrillers`,
     releaseDate: 2017,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
@@ -233,6 +241,7 @@ export default [
   },
   {
     title: `The Grand Budapest Hotel 2`,
+    id: 9,
     genre: `Dramas`,
     releaseDate: 2014,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
@@ -262,6 +271,7 @@ export default [
   },
   {
     title: `Fantastic Beasts 2`,
+    id: 10,
     genre: `Kids&Family`,
     releaseDate: 2018,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
@@ -291,6 +301,7 @@ export default [
   },
   {
     title: `Zombi Jack 2`,
+    id: 11,
     genre: `Horror`,
     releaseDate: 2020,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
@@ -320,6 +331,7 @@ export default [
   },
   {
     title: `Mind Hunter 2`,
+    id: 12,
     genre: `Sci-Fi`,
     releaseDate: 2005,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
@@ -349,6 +361,7 @@ export default [
   },
   {
     title: `Moonrise Kingdom 2`,
+    id: 13,
     genre: `Romance`,
     releaseDate: 2012,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
@@ -378,6 +391,7 @@ export default [
   },
   {
     title: `Johnny English 2`,
+    id: 14,
     genre: `Comedies`,
     releaseDate: 2003,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
@@ -407,6 +421,7 @@ export default [
   },
   {
     title: `Revenant 2`,
+    id: 15,
     genre: `Dramas`,
     releaseDate: 2019,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,
@@ -436,6 +451,7 @@ export default [
   },
   {
     title: `Snatch 2`,
+    id: 16,
     genre: `Thrillers`,
     releaseDate: 2017,
     poster: `/img/the-grand-budapest-hotel-poster.jpg`,

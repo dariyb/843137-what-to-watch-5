@@ -16,10 +16,9 @@ const withMovieList = (Component) => {
 
     }
 
-    onActiveMovie(i) {
-      const {films} = this.props;
+    onActiveMovie(film) {
 
-      this.setState({activeFilm: films[i].title});
+      this.setState({activeFilm: film.title});
     }
 
     leaveActiveFilm() {

@@ -8,6 +8,9 @@ import FilmScreen from "../film-screen/film-screen";
 import AddReviewScreen from "../add-review-screen/add-review-screen";
 import PlayerScreen from "../player-screen/player-screen";
 import {propsForFilms} from "../../types";
+import withPlayerScreen from "../../hocs/with-player-screen/with-player-screen";
+
+const PlayerScreenWrapper = withPlayerScreen(PlayerScreen);
 
 const App = (props) => {
   const {films} = props;
@@ -61,7 +64,7 @@ const App = (props) => {
         />
         <Route exact path="/player/:id"
           render={({history}) => (
-            <PlayerScreen
+            <PlayerScreenWrapper
               films={films}
               onExitClick={() => history.push(`/`)}
             />

@@ -66,7 +66,7 @@ const App = (props) => {
           render={({history}) => (
             <PlayerScreenWrapper
               films={films}
-              onExitClick={() => history.push(`/`)}
+              onExitClick={() => history.goBack()}
             />
           )}
         />

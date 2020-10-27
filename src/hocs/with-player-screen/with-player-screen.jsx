@@ -24,6 +24,7 @@ const withPlayerScreen = (Component) => {
       evt.preventDefault();
       const video = this._videoRef.current;
       video.requestFullscreen();
+
     }
 
     _filmTimeLeft() {
@@ -58,13 +59,16 @@ const withPlayerScreen = (Component) => {
       video.play();
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps, prevState) {
       const video = this._videoRef.current;
 
-      if (this.state.playFilm) {
-        video.play();
-      } else {
-        video.pause();
+      const {playFilm} = this.state;
+      if (this.state.playFilm !== prevState.playFilm) {
+        if (playFilm) {
+          video.play();
+        } else {
+          video.pause();
+        }
       }
     }
 

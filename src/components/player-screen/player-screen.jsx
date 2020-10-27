@@ -26,20 +26,20 @@ const PlayerScreen = (props) => {
             <button type="button" className="player__play"
               onClick={props.onPauseClick}
             >
-              {!props.playFilm && (
-                <Fragment>
-                  <svg viewBox="0 0 19 19" width="19" height="19">
-                    <use xlinkHref="#play-s"></use>
-                  </svg>
-                  <span>Play</span>
-                </Fragment>)}
-              {props.playFilm && (
+              {props.playFilm ? (
                 <Fragment>
                   <svg viewBox="0 0 14 21" width="14" height="21">
                     <use xlinkHref="#pause"></use>
                   </svg>
                   <span>Pause</span>
-                </Fragment>)}
+                </Fragment>) : (
+                <Fragment>
+                  <svg viewBox="0 0 19 19" width="19" height="19">
+                    <use xlinkHref="#play-s"></use>
+                  </svg>
+                  <span>Play</span>
+                </Fragment>
+              )}
             </button>
             <div className="player__name">Transpotting</div>
 

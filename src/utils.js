@@ -50,5 +50,17 @@ const getFilmsByGenre = (films, genre) => {
   return films.filter((film) => film.genre === genre);
 };
 
+const returnLeftTime = (filmTime) => {
+  const addZero = (time) => {
+    return (time < 10) ? `0` + time : time;
+  };
 
-export {getTextScore, TABS, tabsFilmScreen, extend, tabsFilmGenres, getFilmsByGenre, INITIAL_NUMBER_OF_FILMS};
+  let hours = addZero(Math.floor(filmTime / 3600));
+  let minutes = addZero(Math.floor((filmTime - (hours * 3600)) / 60));
+  let seconds = addZero(Math.floor(filmTime - (hours * 3600) - (minutes * 60)));
+
+  return `${hours}:${minutes}:${seconds}`;
+};
+
+
+export {getTextScore, TABS, tabsFilmScreen, extend, tabsFilmGenres, getFilmsByGenre, INITIAL_NUMBER_OF_FILMS, returnLeftTime};

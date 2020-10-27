@@ -13,7 +13,7 @@ export default [
     director: `Wes Andreson`,
     cast: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe`,
     runningTime: `1h 25m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -43,7 +43,7 @@ export default [
     director: `Curt Russel`,
     cast: `Kim Check, Alan Rickman, Peter Brower`,
     runningTime: `2h 50m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/independent/the-devil-has-a-name/the-devil-has-a-name-clip-1_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -73,7 +73,7 @@ export default [
     director: `Wes Kraven`,
     cast: `Billy Moore, Gregory Petch, Amory Stash`,
     runningTime: `1h 30m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -103,7 +103,7 @@ export default [
     director: `Dan Desk`,
     cast: `Rob Jr, Adgar Roudy, Michael Caine`,
     runningTime: `2h 10m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -133,7 +133,7 @@ export default [
     director: `Wes Anderson`,
     cast: `Kara Hayward, Edward Norton, Jared Gilman`,
     runningTime: `1h 35m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -163,7 +163,7 @@ export default [
     director: `Peter Howitt`,
     cast: `Rowan Atkinson, Ben Miller, Natalie Cruz`,
     runningTime: `1h 29m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -193,7 +193,7 @@ export default [
     director: `Den Abrech`,
     cast: `Leonardo Di Caprio, Stan Voz, Omar Croup`,
     runningTime: `2h 55m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -223,7 +223,7 @@ export default [
     director: `Sole Crane`,
     cast: `Base Coss, Heil Frank, Goer Varz`,
     runningTime: `1h 56m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -253,7 +253,7 @@ export default [
     director: `Wes Andreson`,
     cast: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe`,
     runningTime: `1h 25m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -283,7 +283,7 @@ export default [
     director: `Curt Russel`,
     cast: `Kim Check, Alan Rickman, Peter Brower`,
     runningTime: `2h 50m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -313,7 +313,7 @@ export default [
     director: `Wes Kraven`,
     cast: `Billy Moore, Gregory Petch, Amory Stash`,
     runningTime: `1h 30m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -343,7 +343,7 @@ export default [
     director: `Dan Desk`,
     cast: `Rob Jr, Adgar Roudy, Michael Caine`,
     runningTime: `2h 10m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -373,7 +373,7 @@ export default [
     director: `Wes Anderson`,
     cast: `Kara Hayward, Edward Norton, Jared Gilman`,
     runningTime: `1h 35m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -403,7 +403,7 @@ export default [
     director: `Peter Howitt`,
     cast: `Rowan Atkinson, Ben Miller, Natalie Cruz`,
     runningTime: `1h 29m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -433,7 +433,7 @@ export default [
     director: `Den Abrech`,
     cast: `Leonardo Di Caprio, Stan Voz, Omar Croup`,
     runningTime: `2h 55m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -463,7 +463,7 @@ export default [
     director: `Sole Crane`,
     cast: `Base Coss, Heil Frank, Goer Varz`,
     runningTime: `1h 56m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-1_i320.m4v`,
+    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,

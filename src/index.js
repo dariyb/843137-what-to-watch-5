@@ -19,7 +19,7 @@ const store = createStore(
     rootReducer,
     applyMiddleware(thunk.withExtraArgument(api))
 );
-debugger;
+
 store.dispatch(fetchFilmsList());
 
 ReactDOM.render(

@@ -1,12 +1,14 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
 import {propsForFilms} from "../../types";
+import reviews from "../../mocks/films";
 
-const MoviewReviews = (props) => {
-  const {films} = props;
+const MoviewReviews = () => {
+  // const {films} = props;
+  // временное действие,пока не буду получать отзывы с сервера
 
-  const evenReviews = films[0].review.filter((item, i) => i % 2 === 0);
-  const unevenReviews = films[0].review.filter((item, i) => i % 2 !== 0);
+  const evenReviews = reviews[0].review.filter((item, i) => i % 2 === 0);
+  const unevenReviews = reviews[0].review.filter((item, i) => i % 2 !== 0);
 
   const createReview = (review, i) => {
     return (

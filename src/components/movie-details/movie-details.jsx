@@ -16,7 +16,7 @@ const MovieDetails = (props) => {
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Starring</strong>
             <span className="movie-card__details-value">
-              {films[0].cast.split(`\n`)}
+              {films[0].cast}
             </span>
           </p>
         </div>

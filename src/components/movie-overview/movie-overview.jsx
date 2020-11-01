@@ -21,7 +21,7 @@ const MovieOverview = (props) => {
 
         <p className="movie-card__director"><strong>Director:{films[0].director}</strong></p>
 
-        <p className="movie-card__starring"><strong>Starring: {films[0].cast} and other</strong></p>
+        <p className="movie-card__starring"><strong>Starring: {films[0].cast.toString()} and other</strong></p>
       </div>
     </Fragment>
   );

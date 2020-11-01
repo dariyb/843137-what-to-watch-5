@@ -9,11 +9,13 @@ import AddReviewScreen from "../add-review-screen/add-review-screen";
 import PlayerScreen from "../player-screen/player-screen";
 import {propsForFilms} from "../../types";
 import withPlayerScreen from "../../hocs/with-player-screen/with-player-screen";
+import {connect} from "react-redux";
 
 const PlayerScreenWrapper = withPlayerScreen(PlayerScreen);
 
 const App = (props) => {
   const {films} = props;
+  console.log(props);
 
   return (
     <BrowserRouter>
@@ -76,7 +78,12 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  films: PropTypes.arrayOf(propsForFilms).isRequired,
+  films: PropTypes.arrayOf(propsForFilms),
 };
 
-export default App;
+const mapStatetoProps = ({DATA}) => ({
+  films: DATA.films,
+});
+
+export {App};
+export default connect(mapStatetoProps)(App);

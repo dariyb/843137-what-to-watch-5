@@ -1,5 +1,10 @@
 const INITIAL_NUMBER_OF_FILMS = 8;
 
+const AuthorizationStatus = {
+  AUTH: `AUTH`,
+  NO_AUTH: `NO_AUTH`,
+};
+
 const RatingScore = {
   BAD: 0,
   NORMAL: 3,
@@ -62,5 +67,29 @@ const returnLeftTime = (filmTime) => {
   return `${hours}:${minutes}:${seconds}`;
 };
 
+const adaptFilmToClient = (film) => {
+  const adaptedFilm = {
+    backgroundColor: film.background_color,
+    id: film.id,
+    preview: film.preview_image,
+    title: film.name,
+    poster: film.poster_image,
+    backgroundPoster: film.background_image,
+    genre: film.genre,
+    releaseDate: film.released,
+    description: film.description,
+    rating: film.rating,
+    ratingAmount: film.scores_count,
+    cast: film.starring,
+    director: film.director,
+    isFavorite: film.is_favorite,
+    runningTime: film.run_time,
+    filmPreview: film.preview_video_link,
+    fullVideo: film.video_link
+  };
 
-export {getTextScore, TABS, tabsFilmScreen, extend, tabsFilmGenres, getFilmsByGenre, INITIAL_NUMBER_OF_FILMS, returnLeftTime};
+  return adaptedFilm;
+};
+
+
+export {getTextScore, TABS, tabsFilmScreen, extend, tabsFilmGenres, getFilmsByGenre, INITIAL_NUMBER_OF_FILMS, returnLeftTime, AuthorizationStatus, adaptFilmToClient};

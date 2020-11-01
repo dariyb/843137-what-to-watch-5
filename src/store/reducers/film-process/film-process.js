@@ -1,13 +1,13 @@
-import {extend, tabsFilmGenres, getFilmsByGenre} from "../utils";
-import films from "../mocks/films";
-import {ActionType} from "./action";
+import {extend, tabsFilmGenres, getFilmsByGenre} from "../../../utils";
+import films from "../../../mocks/films";
+import {ActionType} from "../../action";
 
 const initialState = {
   activeGenre: tabsFilmGenres[0],
   filmsList: films,
 };
 
-const reducer = (state = initialState, action) => {
+const filmProcess = (state = initialState, action) => {
   switch (action.type) {
     case ActionType.CHANGE_GENRE:
       return extend(state, {
@@ -21,4 +21,4 @@ const reducer = (state = initialState, action) => {
   return state;
 };
 
-export {reducer};
+export {filmProcess};

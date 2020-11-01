@@ -15,7 +15,6 @@ const PlayerScreenWrapper = withPlayerScreen(PlayerScreen);
 
 const App = (props) => {
   const {films} = props;
-  console.log(props);
 
   return (
     <BrowserRouter>

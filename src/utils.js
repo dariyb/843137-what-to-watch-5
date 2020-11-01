@@ -1,5 +1,3 @@
-import {createSelector} from "reselect";
-
 const INITIAL_NUMBER_OF_FILMS = 8;
 
 const AuthorizationStatus = {

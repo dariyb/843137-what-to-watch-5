@@ -1,19 +1,6 @@
 export default [
   {
     title: `The Grand Budapest Hotel`,
-    id: 1,
-    genre: `Dramas`,
-    releaseDate: 2014,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/pulp-fiction.jpg`,
-    backgroundPoster: `/img/bg-the-grand-budapest-hotel.jpg`,
-    description: `In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes)`,
-    rating: 8.9,
-    ratingAmount: 420,
-    director: `Wes Andreson`,
-    cast: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe`,
-    runningTime: `1h 25m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -31,19 +18,6 @@ export default [
   },
   {
     title: `Fantastic Beasts`,
-    id: 2,
-    genre: `Kids&Family`,
-    releaseDate: 2018,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-    backgroundPoster: `/img/bg-header.jpg`,
-    description: `New amazing story from J.K.Rowling, new adventures in wizards world`,
-    rating: 10.0,
-    ratingAmount: 500,
-    director: `Curt Russel`,
-    cast: `Kim Check, Alan Rickman, Peter Brower`,
-    runningTime: `2h 50m`,
-    filmPreview: `https://movietrailers.apple.com/movies/independent/the-devil-has-a-name/the-devil-has-a-name-clip-1_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -61,19 +35,6 @@ export default [
   },
   {
     title: `Zombi Jack`,
-    id: 3,
-    genre: `Horror`,
-    releaseDate: 2020,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/midnight-special.jpg`,
-    backgroundPoster: `/img/bg-header.jpg`,
-    description: `New flash eating virus trying to destory the world`,
-    rating: 5.5,
-    ratingAmount: 30,
-    director: `Wes Kraven`,
-    cast: `Billy Moore, Gregory Petch, Amory Stash`,
-    runningTime: `1h 30m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -91,19 +52,6 @@ export default [
   },
   {
     title: `Mind Hunter`,
-    id: 4,
-    genre: `Sci-Fi`,
-    releaseDate: 2005,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/mindhunter.jpg`,
-    backgroundPoster: `/img/bg-header.jpg`,
-    description: `FBI agent tries to solve murders all around the USA`,
-    rating: 10.0,
-    ratingAmount: 350,
-    director: `Dan Desk`,
-    cast: `Rob Jr, Adgar Roudy, Michael Caine`,
-    runningTime: `2h 10m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -121,19 +69,6 @@ export default [
   },
   {
     title: `Moonrise Kingdom`,
-    id: 5,
-    genre: `Romance`,
-    releaseDate: 2012,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/moonrise-kingdom.jpg`,
-    backgroundPoster: `/img/bg-header.jpg`,
-    description: `Sam falls in love with Suzy and two run away`,
-    rating: 7.8,
-    ratingAmount: 400,
-    director: `Wes Anderson`,
-    cast: `Kara Hayward, Edward Norton, Jared Gilman`,
-    runningTime: `1h 35m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -151,19 +86,6 @@ export default [
   },
   {
     title: `Johnny English`,
-    id: 6,
-    genre: `Comedies`,
-    releaseDate: 2003,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/johnny-english.jpg`,
-    backgroundPoster: `/img/bg-header.jpg`,
-    description: `Johnny English is a rather unintelligent spy`,
-    rating: 6.2,
-    ratingAmount: 300,
-    director: `Peter Howitt`,
-    cast: `Rowan Atkinson, Ben Miller, Natalie Cruz`,
-    runningTime: `1h 29m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -181,19 +103,6 @@ export default [
   },
   {
     title: `Revenant`,
-    id: 7,
-    genre: `Dramas`,
-    releaseDate: 2019,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/revenant.jpg`,
-    backgroundPoster: `/img/bg-header.jpg`,
-    description: `A story of survivor`,
-    rating: 10.0,
-    ratingAmount: 360,
-    director: `Den Abrech`,
-    cast: `Leonardo Di Caprio, Stan Voz, Omar Croup`,
-    runningTime: `2h 55m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -211,19 +120,6 @@ export default [
   },
   {
     title: `Snatch`,
-    id: 8,
-    genre: `Thrillers`,
-    releaseDate: 2017,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/snatch.jpg`,
-    backgroundPoster: `/img/bg-header.jpg`,
-    description: `Carnival of death`,
-    rating: 6.8,
-    ratingAmount: 80,
-    director: `Sole Crane`,
-    cast: `Base Coss, Heil Frank, Goer Varz`,
-    runningTime: `1h 56m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -241,19 +137,6 @@ export default [
   },
   {
     title: `The Grand Budapest Hotel 2`,
-    id: 9,
-    genre: `Dramas`,
-    releaseDate: 2014,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/pulp-fiction.jpg`,
-    backgroundPoster: `/img/bg-the-grand-budapest-hotel.jpg`,
-    description: `In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes)`,
-    rating: 8.9,
-    ratingAmount: 420,
-    director: `Wes Andreson`,
-    cast: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe`,
-    runningTime: `1h 25m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -271,19 +154,6 @@ export default [
   },
   {
     title: `Fantastic Beasts 2`,
-    id: 10,
-    genre: `Kids&Family`,
-    releaseDate: 2018,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-    backgroundPoster: `/img/bg-header.jpg`,
-    description: `New amazing story from J.K.Rowling, new adventures in wizards world`,
-    rating: 10.0,
-    ratingAmount: 500,
-    director: `Curt Russel`,
-    cast: `Kim Check, Alan Rickman, Peter Brower`,
-    runningTime: `2h 50m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -301,19 +171,6 @@ export default [
   },
   {
     title: `Zombi Jack 2`,
-    id: 11,
-    genre: `Horror`,
-    releaseDate: 2020,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/midnight-special.jpg`,
-    backgroundPoster: `/img/bg-header.jpg`,
-    description: `New flash eating virus trying to destory the world`,
-    rating: 5.5,
-    ratingAmount: 30,
-    director: `Wes Kraven`,
-    cast: `Billy Moore, Gregory Petch, Amory Stash`,
-    runningTime: `1h 30m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -331,19 +188,6 @@ export default [
   },
   {
     title: `Mind Hunter 2`,
-    id: 12,
-    genre: `Sci-Fi`,
-    releaseDate: 2005,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/mindhunter.jpg`,
-    backgroundPoster: `/img/bg-header.jpg`,
-    description: `FBI agent tries to solve murders all around the USA`,
-    rating: 10.0,
-    ratingAmount: 350,
-    director: `Dan Desk`,
-    cast: `Rob Jr, Adgar Roudy, Michael Caine`,
-    runningTime: `2h 10m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -361,19 +205,6 @@ export default [
   },
   {
     title: `Moonrise Kingdom 2`,
-    id: 13,
-    genre: `Romance`,
-    releaseDate: 2012,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/moonrise-kingdom.jpg`,
-    backgroundPoster: `/img/bg-header.jpg`,
-    description: `Sam falls in love with Suzy and two run away`,
-    rating: 7.8,
-    ratingAmount: 400,
-    director: `Wes Anderson`,
-    cast: `Kara Hayward, Edward Norton, Jared Gilman`,
-    runningTime: `1h 35m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -391,19 +222,6 @@ export default [
   },
   {
     title: `Johnny English 2`,
-    id: 14,
-    genre: `Comedies`,
-    releaseDate: 2003,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/johnny-english.jpg`,
-    backgroundPoster: `/img/bg-header.jpg`,
-    description: `Johnny English is a rather unintelligent spy`,
-    rating: 6.2,
-    ratingAmount: 300,
-    director: `Peter Howitt`,
-    cast: `Rowan Atkinson, Ben Miller, Natalie Cruz`,
-    runningTime: `1h 29m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -421,19 +239,6 @@ export default [
   },
   {
     title: `Revenant 2`,
-    id: 15,
-    genre: `Dramas`,
-    releaseDate: 2019,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/revenant.jpg`,
-    backgroundPoster: `/img/bg-header.jpg`,
-    description: `A story of survivor`,
-    rating: 10.0,
-    ratingAmount: 360,
-    director: `Den Abrech`,
-    cast: `Leonardo Di Caprio, Stan Voz, Omar Croup`,
-    runningTime: `2h 55m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,
@@ -451,19 +256,6 @@ export default [
   },
   {
     title: `Snatch 2`,
-    id: 16,
-    genre: `Thrillers`,
-    releaseDate: 2017,
-    poster: `/img/the-grand-budapest-hotel-poster.jpg`,
-    preview: `/img/snatch.jpg`,
-    backgroundPoster: `/img/bg-header.jpg`,
-    description: `Carnival of death`,
-    rating: 6.8,
-    ratingAmount: 80,
-    director: `Sole Crane`,
-    cast: `Base Coss, Heil Frank, Goer Varz`,
-    runningTime: `1h 56m`,
-    filmPreview: `https://movietrailers.apple.com/movies/wb/tenet/tenet-trailer-2_i320.m4v`,
     review: [
       {
         reviewText: `It is certainly a magical and childlike way of storytelling, even if the content is a little more adult.`,

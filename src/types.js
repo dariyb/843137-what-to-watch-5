@@ -11,8 +11,8 @@ const propsForFilms = PropTypes.shape({
   rating: PropTypes.number.isRequired,
   ratingAmount: PropTypes.number.isRequired,
   director: PropTypes.string.isRequired,
-  cast: PropTypes.string.isRequired,
-  runningTime: PropTypes.string.isRequired,
+  cast: PropTypes.array.isRequired,
+  runningTime: PropTypes.number.isRequired,
   filmPreview: PropTypes.string.isRequired
 });
 

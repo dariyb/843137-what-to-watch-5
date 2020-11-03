@@ -1,15 +1,24 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
 import {propsForFilms} from "../../types";
-import {tabsFilmGenres} from "../../utils";
+// import {tabsFilmGenres} from "../../utils";
 
 const GenresList = (props) => {
   const {films, filterFilmsList} = props;
+  const genres = [];
+
+  const allGenres = (movies) => {
+    for (let i = 0; i < movies.length; i++) {
+      genres.push(movies[i].genre);
+    }
+    const uniqueGenres = new Set(genres);
+    return [`All genres`, ...uniqueGenres];
+  };
 
   return (
     <Fragment>
       <ul className="catalog__genres-list">
-        {tabsFilmGenres.map((genre, i) =>
+        {allGenres(films).map((genre, i) =>
           <li key={`${i}-${genre}`}
             className={`catalog__genres-item ${genre === props.isActive ? `catalog__genres-item--active` : ``}`}
           >

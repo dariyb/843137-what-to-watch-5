@@ -9,6 +9,7 @@ import AddReviewScreen from "../add-review-screen/add-review-screen";
 import PlayerScreen from "../player-screen/player-screen";
 import {propsForFilms} from "../../types";
 import withPlayerScreen from "../../hocs/with-player-screen/with-player-screen";
+import {connect} from "react-redux";
 
 const PlayerScreenWrapper = withPlayerScreen(PlayerScreen);
 
@@ -38,7 +39,7 @@ const App = (props) => {
         <Route exact path="/mylist"
           render={({history}) => (
             <MyListScreen films={films}
-              onFilmCardClick={() => history.push(`/films/5`)}
+              onFilmCardClick={() => history.push(`/films/6`)}
               onLogoClick={() => history.push(`/`)}
             />
           )}
@@ -46,9 +47,9 @@ const App = (props) => {
         <Route exact path="/films/:id"
           render={({history}) => (
             <FilmScreen films={films}
-              onFilmCardClick={() => history.push(`/films/4`)}
+              onFilmCardClick={() => history.push(`/films/6`)}
               onLogoClick={() => history.push(`/`)}
-              onAddReviewClick={() => history.push(`/films/2/review`)}
+              onAddReviewClick={() => history.push(`/films/6/review`)}
               onMyListClick={() => history.push(`/mylist`)}
               onPlayClick={() => history.push(`/player/6`)}
             />
@@ -58,7 +59,7 @@ const App = (props) => {
           render={({history}) => (
             <AddReviewScreen films={films}
               onLogoClick={() => history.push(`/`)}
-              onFilmTitleClick={() => history.push(`/films/1`)}
+              onFilmTitleClick={() => history.push(`/films/6`)}
             />
           )}
         />
@@ -76,7 +77,12 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  films: PropTypes.arrayOf(propsForFilms).isRequired,
+  films: PropTypes.arrayOf(propsForFilms),
 };
 
-export default App;
+const mapStatetoProps = ({DATA}) => ({
+  films: DATA.films,
+});
+
+export {App};
+export default connect(mapStatetoProps)(App);

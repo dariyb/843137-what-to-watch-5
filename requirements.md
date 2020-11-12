@@ -10,7 +10,7 @@ npm i react@16.12 -E
 ## dependencies
 
 <!-- * axios@0.19 -->
-* history@4.10
+<!-- * history@4.10 -->
 <!-- * prop-types@15.7 -->
 <!-- * react@16.12
 * react-dom@16.12 -->
@@ -37,7 +37,7 @@ npm i react@16.12 -E
 * eslint-plugin-react@7.18 -->
 * jest@25.1
 * react-test-renderer@16.12
-* redux-devtools-extension@2.13
+<!-- * redux-devtools-extension@2.13 -->
 * redux-mock-store@1.5
 <!-- * webpack@4.41
 * webpack-cli@3.3

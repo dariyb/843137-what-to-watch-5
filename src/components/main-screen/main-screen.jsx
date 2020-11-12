@@ -8,12 +8,15 @@ import GenresList from "../genres-list/genres-list";
 import {tabsFilmGenres, getFilmsByGenre} from "../../utils";
 import withButton from "../../hocs/with-button/with-button";
 import withMovieList from "../../hocs/with-movie-list/with-movie-list";
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {getAuthStatus} from "../../store/reducers/root-reducer";
 
 const GenresListWrapper = withActiveTab(GenresList);
 const MovieListWarpper = withButton(withMovieList(MovieList));
 
 const MainScreen = (props) => {
-  const {films, onFilmCardClick, onMyListClick, onPlayClick, onLogoClick} = props;
+  const {films, onFilmCardClick, onMyListClick, onPlayClick, onLogoClick, isAuthorised} = props;
 
   return (
     <React.Fragment>
@@ -36,9 +39,14 @@ const MainScreen = (props) => {
               </div>
 
               <div className="user-block">
-                <div className="user-block__avatar">
-                  <img src="/img/avatar.jpg" alt="User avatar" width="63" height="63" />
-                </div>
+                {
+                  isAuthorised ?
+                    <div className="user-block__avatar">
+                      <img src="/img/avatar.jpg" alt="User avatar" width="63" height="63" />
+                    </div>
+                    :
+                    <Link to='/login' className="user-block__link">Sign in</Link>
+                }
               </div>
             </header>
 
@@ -105,8 +113,14 @@ MainScreen.propTypes = {
   onFilmCardClick: PropTypes.func.isRequired,
   onPlayClick: PropTypes.func.isRequired,
   onMyListClick: PropTypes.func.isRequired,
-  onLogoClick: PropTypes.func.isRequired
+  onLogoClick: PropTypes.func.isRequired,
+  isAuthorised: PropTypes.bool.isRequired,
 };
 
+const mapStatetoProps = (state) => ({
+  isAuthorised: getAuthStatus(state),
+});
 
-export default MainScreen;
+export {MainScreen};
+
+export default connect(mapStatetoProps)(MainScreen);

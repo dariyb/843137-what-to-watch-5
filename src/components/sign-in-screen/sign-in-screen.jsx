@@ -1,4 +1,4 @@
-import React, {PureComponent, createRef} from "react";
+import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {login} from "../../store/api-actions";
@@ -8,10 +8,31 @@ class SignInScreen extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.loginRef = createRef();
-    this.passwordRef = createRef();
+    this.state = {
+      login: ``,
+      password: ``,
+    };
+
+    this.onChangeLogin = this.onChangeLogin.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
+
+    // this.loginRef = createRef();
+    // this.passwordRef = createRef();
 
     this.onSubmitClick = this.onSubmitClick.bind(this);
+  }
+
+  onChangeLogin(evt) {
+    this.setState({
+      login: evt.target.value,
+      // [evt.target.name]: evt.target.value
+    });
+  }
+  onChangePassword(evt) {
+    this.setState({
+      password: evt.target.value,
+      // [evt.target.name]: evt.target.value
+    });
   }
 
   onSubmitClick(evt) {
@@ -20,8 +41,8 @@ class SignInScreen extends PureComponent {
     const {onSubmit} = this.props;
 
     onSubmit({
-      login: this.loginRef.current.value,
-      password: this.passwordRef.current.value,
+      login: this.state.login,
+      password: this.state.password,
     });
   }
 
@@ -51,7 +72,7 @@ class SignInScreen extends PureComponent {
               <div className="sign-in__fields">
                 <div className="sign-in__field">
                   <input
-                    ref={this.loginRef}
+                    onChange={this.onChangeLogin}
                     className="sign-in__input"
                     type="email"
                     placeholder="Email address"
@@ -62,7 +83,7 @@ class SignInScreen extends PureComponent {
                 </div>
                 <div className="sign-in__field">
                   <input
-                    ref={this.passwordRef}
+                    onChange={this.onChangePassword}
                     className="sign-in__input"
                     type="password"
                     placeholder="Password"

@@ -10,6 +10,9 @@ import MovieDetails from "../movie-details/movie-details";
 import MoviewReviews from "../movie-reviews/movie-reviews";
 import {TABS, tabsFilmScreen} from "../../utils";
 import withMovieList from "../../hocs/with-movie-list/with-movie-list";
+// import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {getAuthStatus} from "../../store/reducers/root-reducer";
 
 const MovieListMyListWrapper = withMovieList(MovieList);
 
@@ -18,7 +21,12 @@ const TabsWrapper = withActiveTab(Tabs);
 const SIMILAR_FILMS = 4;
 
 const FilmScreen = (props) => {
-  const {films, onFilmCardClick, onLogoClick, onAddReviewClick, onPlayClick, onMyListClick} = props;
+  const {films, onFilmCardClick, onLogoClick, onAddReviewClick, onPlayClick, onMyListClick, isAuthorised} = props;
+
+  console.log(props);
+  const id = props.match.params.id;
+  console.log(id);
+  // const {backgroundPoster} = films[id];
 
   const getMoreLikeThis = (movies, currentFilm) => {
     const similarMovies = movies.filter((movie) => movie.genre === currentFilm.genre);
@@ -80,7 +88,12 @@ const FilmScreen = (props) => {
                   </svg>
                   <span>My list</span>
                 </button>
-                <a onClick={onAddReviewClick} className="btn movie-card__button">Add review</a>
+                {
+                  isAuthorised ?
+                    <a onClick={onAddReviewClick} className="btn movie-card__button">Add review</a>
+                    :
+                    ``
+                }
               </div>
             </div>
           </div>
@@ -119,7 +132,8 @@ const FilmScreen = (props) => {
 
           <MovieListMyListWrapper
             films={similarGenreFilms}
-            onFilmCardClick={onFilmCardClick}/>
+            onFilmCardClick={onFilmCardClick}
+          />
         </section>
 
         <FooterScreen onLogoClick={onLogoClick}/>
@@ -135,6 +149,20 @@ FilmScreen.propTypes = {
   onAddReviewClick: PropTypes.func.isRequired,
   onPlayClick: PropTypes.func.isRequired,
   onMyListClick: PropTypes.func.isRequired,
+  isAuthorised: PropTypes.bool.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.number.isRequired
+    })
+  }),
 };
 
-export default FilmScreen;
+const mapStatetoProps = (state) => ({
+  isAuthorised: getAuthStatus(state),
+});
+
+export {FilmScreen};
+
+export default connect(mapStatetoProps)(FilmScreen);
+
+// export default FilmScreen;

@@ -1,9 +1,14 @@
-import {loadFilms, requireAuthorization, redirectToRoute} from "./action";
+import {loadFilms, requireAuthorization, redirectToRoute, loadFilmComments} from "./action";
 import {adaptFilmToClient, AuthorizationStatus} from "../utils";
 
 export const fetchFilmsList = () => (dispatch, _getState, api) => (
   api.get(`/films`)
     .then(({data}) => dispatch(loadFilms(data.map(adaptFilmToClient))))
+);
+
+export const fetchFilmComments = (id) => (dispatch, _getState, api) => (
+  api.get(`/comments/${id}`)
+    .then(({data}) => dispatch(loadFilmComments(data)))
 );
 
 export const checkAuth = () => (dispatch, _getState, api) => (

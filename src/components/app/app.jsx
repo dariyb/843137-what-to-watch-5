@@ -12,8 +12,10 @@ import withPlayerScreen from "../../hocs/with-player-screen/with-player-screen";
 import {connect} from "react-redux";
 import PrivateRoute from "../private-route/private-route";
 import browserHistory from "../../browser-history";
+import withSignIn from "../../hocs/with-sign-in/with-sign-in";
 
 const PlayerScreenWrapper = withPlayerScreen(PlayerScreen);
+const SignInWrapper = withSignIn(SignInScreen);
 
 const App = (props) => {
   const {films} = props;
@@ -24,7 +26,7 @@ const App = (props) => {
         <Route exact path="/"
           render={({history}) => (
             <MainScreen films={films}
-              onFilmCardClick={() => history.push(`/films/6`)}
+              onFilmCardClick={() => history.push(`/films/:id`)}
               onMyListClick={() => history.push(`/mylist`)}
               onPlayClick={() => history.push(`/player/6`)}
               onLogoClick={() => history.push(`/`)}
@@ -33,7 +35,7 @@ const App = (props) => {
         />
         <Route exact path="/login"
           render={({history}) => (
-            <SignInScreen
+            <SignInWrapper
               onLogoClick={() => history.push(`/`)}
             />
           )}

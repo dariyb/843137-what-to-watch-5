@@ -27,6 +27,7 @@ const FilmScreen = (props) => {
   const idFilm = props.match.params.id;
   // console.log(idFilm);
   const {backgroundPoster, id} = films[idFilm];
+  console.log(films[idFilm].id);
 
   const getMoreLikeThis = (movies, currentFilm) => {
     const similarMovies = movies.filter((movie) => movie.genre === currentFilm.genre);

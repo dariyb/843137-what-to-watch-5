@@ -46,7 +46,7 @@ const App = (props) => {
           render={({history}) => {
             return (
               <MyListScreen films={films}
-                onFilmCardClick={(id) => history.push(`/films/${id}`)}
+                onFilmCardClick={() => history.push(`/films/2`)}
                 onLogoClick={() => history.push(`/`)}
               />
             );
@@ -57,7 +57,7 @@ const App = (props) => {
             <FilmScreenWrapper films={films}
               onFilmCardClick={(id) => history.push(`/films/${id}`)}
               onLogoClick={() => history.push(`/`)}
-              onAddReviewClick={(id) => history.push(`/films/${id}/review`)}
+              onAddReviewClick={() => history.push(`/films/1/review`)}
               onMyListClick={() => history.push(`/mylist`)}
               onPlayClick={() => history.push(`/player/6`)}
             />
@@ -68,7 +68,7 @@ const App = (props) => {
             return (
               <AddReviewScreen films={films}
                 onLogoClick={() => history.push(`/`)}
-                onFilmCardClick={(id) => history.push(`/films/${id}`)}
+                onFilmCardClick={() => history.push(`/films/4`)}
               />
             );
           }}

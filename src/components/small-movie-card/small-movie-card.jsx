@@ -6,6 +6,7 @@ import VideoPlayer from "../video-player/video-player";
 const SmallMovieCard = (props) => {
   const {film, onFilmCardClick, onMouseEnter, onMouseLeave, isVideoPlaying} = props;
   console.log(props);
+
   return (
     <article className="small-movie-card catalog__movies-card">
       <div className="small-movie-card__image"

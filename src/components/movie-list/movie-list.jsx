@@ -33,6 +33,7 @@ MovieList.propTypes = {
   onMouseEnter: PropTypes.func.isRequired,
   activeFilm: PropTypes.string.isRequired,
   onMouseLeave: PropTypes.func.isRequired,
+  activeFilmId: PropTypes.string.isRequired,
 };
 
 export default MovieList;

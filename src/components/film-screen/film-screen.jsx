@@ -24,9 +24,9 @@ const FilmScreen = (props) => {
   const {films, onFilmCardClick, onLogoClick, onAddReviewClick, onPlayClick, onMyListClick, isAuthorised} = props;
 
   console.log(props);
-  const id = props.match.params.id;
-  console.log(id);
-  // const {backgroundPoster} = films[id];
+  const idFilm = props.match.params.id;
+  // console.log(idFilm);
+  const {backgroundPoster, id} = films[idFilm];
 
   const getMoreLikeThis = (movies, currentFilm) => {
     const similarMovies = movies.filter((movie) => movie.genre === currentFilm.genre);
@@ -46,7 +46,7 @@ const FilmScreen = (props) => {
       <section className="movie-card movie-card--full">
         <div className="movie-card__hero">
           <div className="movie-card__bg">
-            <img src={films[0].backgroundPoster} alt={films[0].title} />
+            <img src={backgroundPoster} alt={films[0].title} />
           </div>
 
           <h1 className="visually-hidden">WTW</h1>
@@ -132,7 +132,7 @@ const FilmScreen = (props) => {
 
           <MovieListMyListWrapper
             films={similarGenreFilms}
-            onFilmCardClick={onFilmCardClick}
+            onFilmCardClick={onFilmCardClick(id)}
           />
         </section>
 
@@ -152,7 +152,7 @@ FilmScreen.propTypes = {
   isAuthorised: PropTypes.bool.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.number.isRequired
+      id: PropTypes.string.isRequired
     })
   }),
 };

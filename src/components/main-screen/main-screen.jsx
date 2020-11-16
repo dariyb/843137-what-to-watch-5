@@ -18,6 +18,12 @@ const MovieListWarpper = withButton(withMovieList(MovieList));
 const MainScreen = (props) => {
   const {films, onFilmCardClick, onMyListClick, onPlayClick, onLogoClick, isAuthorised} = props;
 
+  console.log(props);
+
+  // const idFilm = props.match.params.id;
+  // console.log(idFilm);
+  // const {backgroundPoster} = films[idFilm];
+
   return (
     <React.Fragment>
       {films.length === 0 ? <p>LOADING...</p> :
@@ -115,6 +121,11 @@ MainScreen.propTypes = {
   onMyListClick: PropTypes.func.isRequired,
   onLogoClick: PropTypes.func.isRequired,
   isAuthorised: PropTypes.bool.isRequired,
+  // match: PropTypes.shape({
+  //   params: PropTypes.shape({
+  //     id: PropTypes.string.isRequired
+  //   })
+  // }),
 };
 
 const mapStatetoProps = (state) => ({

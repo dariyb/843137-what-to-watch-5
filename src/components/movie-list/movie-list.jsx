@@ -5,6 +5,7 @@ import {propsForFilms} from "../../types";
 
 const MovieList = (props) => {
   const {films, onFilmCardClick, activeNumberOfFilms, onMouseEnter, onMouseLeave} = props;
+  console.log(props);
 
   return (
     <Fragment>

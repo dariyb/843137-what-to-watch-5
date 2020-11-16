@@ -13,9 +13,11 @@ import {connect} from "react-redux";
 import PrivateRoute from "../private-route/private-route";
 import browserHistory from "../../browser-history";
 import withSignIn from "../../hocs/with-sign-in/with-sign-in";
+import {withRouter} from "react-router";
 
 const PlayerScreenWrapper = withPlayerScreen(PlayerScreen);
 const SignInWrapper = withSignIn(SignInScreen);
+const FilmScreenWrapper = withRouter(FilmScreen);
 
 const App = (props) => {
   const {films} = props;
@@ -26,7 +28,7 @@ const App = (props) => {
         <Route exact path="/"
           render={({history}) => (
             <MainScreen films={films}
-              onFilmCardClick={() => history.push(`/films/:id`)}
+              onFilmCardClick={(id) => history.push(`/films/${id}`)}
               onMyListClick={() => history.push(`/mylist`)}
               onPlayClick={() => history.push(`/player/6`)}
               onLogoClick={() => history.push(`/`)}
@@ -44,7 +46,7 @@ const App = (props) => {
           render={({history}) => {
             return (
               <MyListScreen films={films}
-                onFilmCardClick={() => history.push(`/films/6`)}
+                onFilmCardClick={(id) => history.push(`/films/${id}`)}
                 onLogoClick={() => history.push(`/`)}
               />
             );
@@ -52,10 +54,10 @@ const App = (props) => {
         />
         <Route exact path="/films/:id"
           render={({history}) => (
-            <FilmScreen films={films}
-              onFilmCardClick={() => history.push(`/films/6`)}
+            <FilmScreenWrapper films={films}
+              onFilmCardClick={(id) => history.push(`/films/${id}`)}
               onLogoClick={() => history.push(`/`)}
-              onAddReviewClick={() => history.push(`/films/6/review`)}
+              onAddReviewClick={(id) => history.push(`/films/${id}/review`)}
               onMyListClick={() => history.push(`/mylist`)}
               onPlayClick={() => history.push(`/player/6`)}
             />
@@ -66,7 +68,7 @@ const App = (props) => {
             return (
               <AddReviewScreen films={films}
                 onLogoClick={() => history.push(`/`)}
-                onFilmTitleClick={() => history.push(`/films/6`)}
+                onFilmCardClick={(id) => history.push(`/films/${id}`)}
               />
             );
           }}
@@ -86,6 +88,11 @@ const App = (props) => {
 
 App.propTypes = {
   films: PropTypes.arrayOf(propsForFilms),
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    })
+  }),
 };
 
 const mapStatetoProps = ({DATA}) => ({

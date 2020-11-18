@@ -9,7 +9,6 @@ const MovieListMyListWrapper = withMovieList(MovieList);
 
 const MyListScreen = (props) => {
   const {films, onFilmCardClick, onLogoClick} = props;
-  console.log(props);
 
   return (
     <React.Fragment>

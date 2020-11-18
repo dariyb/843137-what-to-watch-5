@@ -5,7 +5,6 @@ import {propsForFilms} from "../../types";
 
 const MovieList = (props) => {
   const {films, onFilmCardClick, activeNumberOfFilms, onMouseEnter, onMouseLeave} = props;
-  console.log(props);
 
   return (
     <Fragment>
@@ -33,7 +32,6 @@ MovieList.propTypes = {
   onMouseEnter: PropTypes.func.isRequired,
   activeFilm: PropTypes.string.isRequired,
   onMouseLeave: PropTypes.func.isRequired,
-  activeFilmId: PropTypes.string.isRequired,
 };
 
 export default MovieList;

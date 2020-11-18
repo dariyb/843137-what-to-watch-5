@@ -47,3 +47,5 @@ Promise.all([
       document.querySelector(`#root`)
   );
 });
+
+export {store};

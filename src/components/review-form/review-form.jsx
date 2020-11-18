@@ -1,14 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {connect} from "react-redux";
+import {publishReview} from "../../store/api-actions";
 
 const RATINGS = [`1`, `2`, `3`, `4`, `5`];
 
 const ReviewForm = (props) => {
   const {onChangeRating, onChangeText} = props;
+  console.log(props);
+
+  const onSubmitClick = (evt) => {
+    evt.preventDefault();
+
+    const {onSubmit} = props;
+
+    onSubmit(props.filmId, props.activeState);
+
+  };
 
   return (
     <form action="#" className="add-review__form"
-      onSubmit={props.onSubmitClick}
+      onSubmit={onSubmitClick}
     >
       <div className="rating">
         <div className="rating__stars">
@@ -47,11 +59,21 @@ const ReviewForm = (props) => {
 };
 
 ReviewForm.propTypes = {
-  onSubmitClick: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
   currentRating: PropTypes.string.isRequired,
   onChangeRating: PropTypes.func.isRequired,
   onChangeText: PropTypes.func.isRequired,
   reviewTextValue: PropTypes.string.isRequired,
+  activeState: PropTypes.object.isRequired,
+  filmId: PropTypes.number.isRequired,
 };
 
-export default ReviewForm;
+const mapDispatchToProps = (dispatch) => ({
+  onSubmit(id, authData) {
+    debugger;
+    dispatch(publishReview(id, authData));
+  }
+});
+
+export {ReviewForm};
+export default connect(null, mapDispatchToProps)(ReviewForm);

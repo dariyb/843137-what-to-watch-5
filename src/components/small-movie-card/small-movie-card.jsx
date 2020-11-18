@@ -5,7 +5,6 @@ import VideoPlayer from "../video-player/video-player";
 
 const SmallMovieCard = (props) => {
   const {film, onFilmCardClick, onMouseEnter, onMouseLeave, isVideoPlaying} = props;
-  console.log(props);
 
   return (
     <article className="small-movie-card catalog__movies-card">
@@ -18,7 +17,9 @@ const SmallMovieCard = (props) => {
           evt.preventDefault();
           onMouseLeave();
         }}
-        onClick={onFilmCardClick(film.id)}
+        onClick={() => {
+          onFilmCardClick(film.id);
+        }}
       >
         {isVideoPlaying ?
           <VideoPlayer

@@ -25,3 +25,7 @@ export const getAuthStatus = (state) => {
     return false;
   }
 };
+
+// export const getCommentForFilm = (state) => {
+//   const
+// }

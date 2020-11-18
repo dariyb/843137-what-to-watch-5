@@ -17,13 +17,15 @@ export const checkAuth = () => (dispatch, _getState, api) => (
     .catch(() => {
       dispatch(redirectToRoute(`/`));
     })
-    // .catch((err) => {
-    //   throw err;
-    // })
 );
 
 export const login = ({login: email, password}) => (dispatch, _getState, api) => (
   api.post(`/login`, {email, password})
     .then(() => dispatch(requireAuthorization(AuthorizationStatus.AUTH)))
     .then(() => dispatch(redirectToRoute(`/`)))
+);
+
+export const publishReview = (id, {comment: reviewRating, reviewText}) => (dispatch, _getState, api) => (
+  api.post(`/comments/${id}`, {reviewRating, reviewText})
+  .then(() => console.log(id))
 );

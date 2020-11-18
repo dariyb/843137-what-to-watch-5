@@ -1,9 +1,9 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
-import {propsForFilms} from "../../types";
+// import {propsForFilms} from "../../types";
 
 const MovieDetails = (props) => {
-  const {films} = props;
+  const {film} = props;
 
   return (
     <Fragment>
@@ -11,12 +11,12 @@ const MovieDetails = (props) => {
         <div className="movie-card__text-col">
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Director</strong>
-            <span className="movie-card__details-value">{films[0].director}</span>
+            <span className="movie-card__details-value">{film.director}</span>
           </p>
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Starring</strong>
             <span className="movie-card__details-value">
-              {films[0].cast}
+              {film.cast.join(`\n`)}
             </span>
           </p>
         </div>
@@ -24,15 +24,15 @@ const MovieDetails = (props) => {
         <div className="movie-card__text-col">
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Run Time</strong>
-            <span className="movie-card__details-value">{films[0].runningTime}</span>
+            <span className="movie-card__details-value">{film.runningTime}</span>
           </p>
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Genre</strong>
-            <span className="movie-card__details-value">{films[0].genre}</span>
+            <span className="movie-card__details-value">{film.genre}</span>
           </p>
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Released</strong>
-            <span className="movie-card__details-value">{films[0].releaseDate}</span>
+            <span className="movie-card__details-value">{film.releaseDate}</span>
           </p>
         </div>
       </div>
@@ -41,7 +41,7 @@ const MovieDetails = (props) => {
 };
 
 MovieDetails.propTypes = {
-  films: PropTypes.arrayOf(propsForFilms).isRequired,
+  film: PropTypes.object.isRequired,
 };
 
 export default MovieDetails;

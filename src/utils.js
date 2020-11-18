@@ -91,5 +91,9 @@ const adaptFilmToClient = (film) => {
   return adaptedFilm;
 };
 
+const getFilmForId = (filmId, films) => {
+  return films.find((film) => film.id === Number(filmId));
+};
 
-export {getTextScore, TABS, tabsFilmScreen, extend, tabsFilmGenres, getFilmsByGenre, INITIAL_NUMBER_OF_FILMS, returnLeftTime, AuthorizationStatus, adaptFilmToClient};
+
+export {getTextScore, TABS, tabsFilmScreen, extend, tabsFilmGenres, getFilmsByGenre, INITIAL_NUMBER_OF_FILMS, returnLeftTime, AuthorizationStatus, adaptFilmToClient, getFilmForId};

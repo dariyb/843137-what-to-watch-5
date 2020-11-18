@@ -18,6 +18,7 @@ import {withRouter} from "react-router";
 const PlayerScreenWrapper = withPlayerScreen(PlayerScreen);
 const SignInWrapper = withSignIn(SignInScreen);
 const FilmScreenWrapper = withRouter(FilmScreen);
+const AddReviewWrapper = withRouter(AddReviewScreen);
 
 const App = (props) => {
   const {films} = props;
@@ -30,7 +31,7 @@ const App = (props) => {
             <MainScreen films={films}
               onFilmCardClick={(id) => history.push(`/films/${id}`)}
               onMyListClick={() => history.push(`/mylist`)}
-              onPlayClick={() => history.push(`/player/6`)}
+              onPlayClick={() => history.push(`/player/1`)}
               onLogoClick={() => history.push(`/`)}
             />
           )}
@@ -46,7 +47,7 @@ const App = (props) => {
           render={({history}) => {
             return (
               <MyListScreen films={films}
-                onFilmCardClick={() => history.push(`/films/2`)}
+                onFilmCardClick={(id) => history.push(`/films/${id}`)}
                 onLogoClick={() => history.push(`/`)}
               />
             );
@@ -57,7 +58,7 @@ const App = (props) => {
             <FilmScreenWrapper films={films}
               onFilmCardClick={(id) => history.push(`/films/${id}`)}
               onLogoClick={() => history.push(`/`)}
-              onAddReviewClick={() => history.push(`/films/1/review`)}
+              onAddReviewClick={(id) => history.push(`/films/${id}/review`)}
               onMyListClick={() => history.push(`/mylist`)}
               onPlayClick={() => history.push(`/player/6`)}
             />
@@ -66,9 +67,10 @@ const App = (props) => {
         <PrivateRoute exact path={`/films/:id/review`}
           render={({history}) => {
             return (
-              <AddReviewScreen films={films}
+              <AddReviewWrapper films={films}
                 onLogoClick={() => history.push(`/`)}
-                onFilmCardClick={() => history.push(`/films/4`)}
+                onFilmCardClick={(id) => history.push(`/films/${id}`)}
+                onFilmTitleClick={() => history.goBack()}
               />
             );
           }}

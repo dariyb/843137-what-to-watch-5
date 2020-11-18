@@ -25,7 +25,10 @@ export const login = ({login: email, password}) => (dispatch, _getState, api) =>
     .then(() => dispatch(redirectToRoute(`/`)))
 );
 
-export const publishReview = (id, {comment: reviewRating, reviewText}) => (dispatch, _getState, api) => (
-  api.post(`/comments/${id}`, {reviewRating, reviewText})
-  .then(() => console.log(id))
+export const publishReview = (id, {reviewRating, reviewText}, error) => (dispatch, _getState, api) => (
+  api.post(`/comments/${id}`, {rating: reviewRating, comment: reviewText})
+  .then(() => dispatch(redirectToRoute(`/films/${id}`)))
+  .catch(() => {
+    return error;
+  })
 );

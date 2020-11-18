@@ -7,14 +7,19 @@ const RATINGS = [`1`, `2`, `3`, `4`, `5`];
 
 const ReviewForm = (props) => {
   const {onChangeRating, onChangeText} = props;
-  console.log(props);
 
   const onSubmitClick = (evt) => {
     evt.preventDefault();
 
     const {onSubmit} = props;
 
-    onSubmit(props.filmId, props.activeState);
+    const form = document.querySelector(`.add-review__form`);
+    let formElements = form.elements;
+    for (let element of formElements) {
+      element.setAttribute(`disabled`, `disabled`);
+    }
+
+    onSubmit(props.filmId, props.activeState, props.errorFunc(props.error));
 
   };
 
@@ -22,6 +27,11 @@ const ReviewForm = (props) => {
     <form action="#" className="add-review__form"
       onSubmit={onSubmitClick}
     >
+      {props.error === true ?
+        <p style={{textAlign: `center`, fontSize: 35 + `px`}}>Something went wrong! Try again</p>
+        :
+        ``
+      }
       <div className="rating">
         <div className="rating__stars">
           {RATINGS.map((rating, i) => (
@@ -50,7 +60,13 @@ const ReviewForm = (props) => {
         >
         </textarea>
         <div className="add-review__submit">
-          <button className="add-review__btn" type="submit">Post</button>
+          {
+            props.reviewTextValue.length < 50 || props.reviewTextValue.length > 400 || props.currentRating === ``
+              ?
+              <button className="add-review__btn" type="submit" disabled>Post</button>
+              :
+              <button className="add-review__btn" type="submit">Post</button>
+          }
         </div>
 
       </div>
@@ -66,12 +82,13 @@ ReviewForm.propTypes = {
   reviewTextValue: PropTypes.string.isRequired,
   activeState: PropTypes.object.isRequired,
   filmId: PropTypes.number.isRequired,
+  error: PropTypes.bool.isRequired,
+  errorFunc: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  onSubmit(id, authData) {
-    debugger;
-    dispatch(publishReview(id, authData));
+  onSubmit(id, authData, error) {
+    dispatch(publishReview(id, authData, error));
   }
 });
 

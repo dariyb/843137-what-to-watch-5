@@ -1,6 +1,5 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
-import {propsForFilms} from "../../types";
 import {returnLeftTime} from "../../utils";
 
 const PlayerScreen = (props) => {
@@ -60,13 +59,12 @@ const PlayerScreen = (props) => {
 
 PlayerScreen.propTypes = {
   onExitClick: PropTypes.func.isRequired,
-  films: PropTypes.arrayOf(propsForFilms).isRequired,
   playFilm: PropTypes.bool.isRequired,
   progressFilm: PropTypes.number,
   timeLeft: PropTypes.number,
   onFullScreenClick: PropTypes.func.isRequired,
   onPauseClick: PropTypes.func.isRequired,
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default PlayerScreen;

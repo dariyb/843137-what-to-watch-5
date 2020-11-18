@@ -15,7 +15,7 @@ import browserHistory from "../../browser-history";
 import withSignIn from "../../hocs/with-sign-in/with-sign-in";
 import {withRouter} from "react-router";
 
-const PlayerScreenWrapper = withPlayerScreen(PlayerScreen);
+const PlayerScreenWrapper = withRouter(withPlayerScreen(PlayerScreen));
 const SignInWrapper = withSignIn(SignInScreen);
 const FilmScreenWrapper = withRouter(FilmScreen);
 const AddReviewWrapper = withRouter(AddReviewScreen);
@@ -31,7 +31,7 @@ const App = (props) => {
             <MainScreen films={films}
               onFilmCardClick={(id) => history.push(`/films/${id}`)}
               onMyListClick={() => history.push(`/mylist`)}
-              onPlayClick={() => history.push(`/player/1`)}
+              onPlayClick={(id) => history.push(`/player/${id}`)}
               onLogoClick={() => history.push(`/`)}
             />
           )}
@@ -60,7 +60,7 @@ const App = (props) => {
               onLogoClick={() => history.push(`/`)}
               onAddReviewClick={(id) => history.push(`/films/${id}/review`)}
               onMyListClick={() => history.push(`/mylist`)}
-              onPlayClick={() => history.push(`/player/6`)}
+              onPlayClick={(id) => history.push(`/player/${id}`)}
             />
           )}
         />

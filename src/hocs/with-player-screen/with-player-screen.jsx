@@ -1,6 +1,7 @@
 import React, {PureComponent, createRef} from 'react';
 import PropTypes from "prop-types";
 import {propsForFilms} from "../../types";
+import {getFilmForId} from "../../utils";
 
 const withPlayerScreen = (Component) => {
   class WithPlayerScreen extends PureComponent {
@@ -54,8 +55,11 @@ const withPlayerScreen = (Component) => {
       const {films} = this.props;
       const video = this._videoRef.current;
 
-      video.src = films[0].filmPreview;
-      video.poster = films[0].preview;
+      const idFilm = this.props.match.params.id;
+      const film = getFilmForId(idFilm, films);
+
+      video.src = film.filmPreview;
+      video.poster = film.preview;
       video.play();
     }
 
@@ -96,7 +100,12 @@ const withPlayerScreen = (Component) => {
   }
 
   WithPlayerScreen.propTypes = {
-    films: PropTypes.arrayOf(propsForFilms).isRequired
+    films: PropTypes.arrayOf(propsForFilms).isRequired,
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        id: PropTypes.string.isRequired
+      })
+    }),
   };
   return WithPlayerScreen;
 };

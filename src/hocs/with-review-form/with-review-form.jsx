@@ -1,19 +1,30 @@
 import React, {PureComponent} from 'react';
 import PropTypes from "prop-types";
-// import {propsForFilms} from "../../types";
 
 const withReviewForm = (Component) => {
   class WithReviewForm extends PureComponent {
     constructor(props) {
       super(props);
-      console.log(this.props);
+
       this.state = {
         reviewRating: ``,
         reviewText: ``,
+        error: false,
       };
-      // this._onSubmitClick = this._onSubmitClick.bind(this);
       this._onChangeRating = this._onChangeRating.bind(this);
       this._onChangeText = this._onChangeText.bind(this);
+      this.showError = this.showError.bind(this);
+    }
+
+    showError(error) {
+      for (let element of document.querySelector(`.add-review__form`).elements) {
+        element.removeAttribute(`disabled`, `disabled`);
+      }
+      if (error === false) {
+        this.setState({
+          error: true,
+        });
+      }
     }
 
     _onChangeRating(evt) {
@@ -33,19 +44,19 @@ const withReviewForm = (Component) => {
 
       return (
         <Component
-          // onSubmitClick={this._onSubmitClick}
           onChangeRating={this._onChangeRating}
           onChangeText={this._onChangeText}
           currentRating={this.state.reviewRating}
           reviewTextValue={this.state.reviewText}
           activeState={this.state}
           filmId={id}
+          error={this.state.error}
+          errorFunc={this.showError}
         />
       );
     }
   }
   WithReviewForm.propTypes = {
-    // onSubmit: PropTypes.func.isRequired,
     id: PropTypes.number.isRequired,
   };
   return WithReviewForm;

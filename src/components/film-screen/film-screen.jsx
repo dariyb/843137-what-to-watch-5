@@ -10,7 +10,7 @@ import MovieDetails from "../movie-details/movie-details";
 import MoviewReviews from "../movie-reviews/movie-reviews";
 import {TABS, tabsFilmScreen, getFilmForId} from "../../utils";
 import withMovieList from "../../hocs/with-movie-list/with-movie-list";
-import {store} from "../../index";
+// import {store} from "../../index";
 import {fetchFilmComments} from "../../store/api-actions";
 import {connect} from 'react-redux';
 import {getAuthStatus} from "../../store/reducers/root-reducer";
@@ -22,13 +22,16 @@ const TabsWrapper = withActiveTab(Tabs);
 const SIMILAR_FILMS = 4;
 
 const FilmScreen = (props) => {
-  const {films, onFilmCardClick, onLogoClick, onAddReviewClick, onPlayClick, onMyListClick, isAuthorised, reviews} = props;
+  const {films, onFilmCardClick, onLogoClick, onAddReviewClick, onPlayClick, onMyListClick, isAuthorised, reviews, onLoad} = props;
+  console.log(props);
 
   const idFilm = props.match.params.id;
   const film = getFilmForId(idFilm, films);
   const {backgroundPoster, title, genre, releaseDate, poster} = film;
 
-  store.dispatch(fetchFilmComments(film.id));
+  onLoad(film.id);
+
+  // store.dispatch(fetchFilmComments(film.id));
 
   const getMoreLikeThis = (movies, currentFilm) => {
     const similarMovies = movies.filter((movie) => movie.genre === currentFilm.genre);
@@ -153,6 +156,7 @@ FilmScreen.propTypes = {
   onMyListClick: PropTypes.func.isRequired,
   isAuthorised: PropTypes.bool.isRequired,
   reviews: PropTypes.array,
+  onLoad: PropTypes.func.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired
@@ -165,8 +169,14 @@ const mapStatetoProps = (state) => ({
   reviews: state.DATA.comments,
 });
 
+const mapDispatchToProps = (dispatch) => ({
+  onLoad(authData) {
+    dispatch(fetchFilmComments(authData));
+  }
+});
+
 export {FilmScreen};
 
-export default connect(mapStatetoProps)(FilmScreen);
+export default connect(mapStatetoProps, mapDispatchToProps)(FilmScreen);
 
 // export default FilmScreen;

@@ -22,6 +22,7 @@ const AddReviewWrapper = withRouter(AddReviewScreen);
 
 const App = (props) => {
   const {films} = props;
+  console.log(props);
 
   return (
     <BrowserRouter history={browserHistory}>

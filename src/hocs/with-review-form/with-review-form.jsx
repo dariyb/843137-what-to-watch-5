@@ -10,30 +10,22 @@ const withReviewForm = (Component) => {
         reviewRating: ``,
         reviewText: ``,
         error: false,
-        disableForm: ``,
+        enableForm: ``,
       };
+
       this._onChangeRating = this._onChangeRating.bind(this);
       this._onChangeText = this._onChangeText.bind(this);
       this.showError = this.showError.bind(this);
-      this.disableForm = this.disableForm.bind(this);
     }
 
     showError(error) {
-      // for (let element of document.querySelector(`.add-review__form`).elements) {
-      //   element.removeAttribute(`disabled`, `disabled`);
-      // }
       if (error === false) {
         this.setState({
           error: true,
-          disableForm: ``,
+          enableForm: ``,
         });
       }
-    }
-
-    disableForm() {
-      this.setState({
-        disableForm: `disabled`,
-      });
+      return this.state;
     }
 
     _onChangeRating(evt) {
@@ -61,8 +53,7 @@ const withReviewForm = (Component) => {
           filmId={id}
           error={this.state.error}
           errorFunc={this.showError}
-          disableFormFunc={this.disableForm}
-          disableForm={this.state.disableForm}
+          enableForm={this.state.enableForm}
         />
       );
     }

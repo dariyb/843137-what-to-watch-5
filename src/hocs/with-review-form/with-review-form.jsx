@@ -10,7 +10,6 @@ const withReviewForm = (Component) => {
         reviewRating: ``,
         reviewText: ``,
         error: false,
-        enableForm: ``,
       };
 
       this._onChangeRating = this._onChangeRating.bind(this);
@@ -18,14 +17,10 @@ const withReviewForm = (Component) => {
       this.showError = this.showError.bind(this);
     }
 
-    showError(error) {
-      if (error === false) {
-        this.setState({
-          error: true,
-          enableForm: ``,
-        });
-      }
-      return this.state;
+    showError() {
+      this.setState({
+        error: true,
+      });
     }
 
     _onChangeRating(evt) {
@@ -53,7 +48,6 @@ const withReviewForm = (Component) => {
           filmId={id}
           error={this.state.error}
           errorFunc={this.showError}
-          enableForm={this.state.enableForm}
         />
       );
     }

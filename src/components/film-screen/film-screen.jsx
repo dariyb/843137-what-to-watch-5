@@ -10,7 +10,6 @@ import MovieDetails from "../movie-details/movie-details";
 import MoviewReviews from "../movie-reviews/movie-reviews";
 import {TABS, tabsFilmScreen, getFilmForId} from "../../utils";
 import withMovieList from "../../hocs/with-movie-list/with-movie-list";
-// import {store} from "../../index";
 import {fetchFilmComments} from "../../store/api-actions";
 import {connect} from 'react-redux';
 import {getAuthStatus} from "../../store/reducers/root-reducer";
@@ -23,15 +22,14 @@ const SIMILAR_FILMS = 4;
 
 const FilmScreen = (props) => {
   const {films, onFilmCardClick, onLogoClick, onAddReviewClick, onPlayClick, onMyListClick, isAuthorised, reviews, onLoad} = props;
-  console.log(props);
 
   const idFilm = props.match.params.id;
   const film = getFilmForId(idFilm, films);
   const {backgroundPoster, title, genre, releaseDate, poster} = film;
 
-  onLoad(film.id);
-
-  // store.dispatch(fetchFilmComments(film.id));
+  React.useEffect(() => {
+    onLoad(film.id);
+  }, [film.id]);
 
   const getMoreLikeThis = (movies, currentFilm) => {
     const similarMovies = movies.filter((movie) => movie.genre === currentFilm.genre);
@@ -178,5 +176,3 @@ const mapDispatchToProps = (dispatch) => ({
 export {FilmScreen};
 
 export default connect(mapStatetoProps, mapDispatchToProps)(FilmScreen);
-
-// export default FilmScreen;

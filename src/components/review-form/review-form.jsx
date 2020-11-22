@@ -14,12 +14,17 @@ const ReviewForm = (props) => {
     evt.preventDefault();
 
     setFormDisable(true);
-    debugger;
 
-    onSubmit(props.filmId, props.activeState, props.errorFunc(props.error));
+    onSubmit(props.filmId, props.activeState, ifErrorOccurs);
 
   };
   const commentConditions = props.reviewTextValue.length < 50 || props.reviewTextValue.length > 400 || props.currentRating === ``;
+
+  const ifErrorOccurs = () => {
+    props.errorFunc(props.error);
+    setFormDisable(false);
+    return formDisable;
+  };
 
   return (
     <form action="#" className="add-review__form"
@@ -41,6 +46,7 @@ const ReviewForm = (props) => {
                 onChange={(evt) => {
                   onChangeRating(evt);
                 }}
+                disabled={formDisable}
               />
               <label className="rating__label"
                 htmlFor={`star-${rating}`}>Rating {rating}</label>
@@ -55,6 +61,7 @@ const ReviewForm = (props) => {
           onChange={(evt) => {
             onChangeText(evt);
           }}
+          disabled={formDisable}
         >
         </textarea>
         <div className="add-review__submit">
@@ -75,12 +82,10 @@ ReviewForm.propTypes = {
   filmId: PropTypes.number.isRequired,
   error: PropTypes.bool.isRequired,
   errorFunc: PropTypes.func.isRequired,
-  enableForm: PropTypes.string.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({
   onSubmit(id, authData, error) {
-    debugger;
     dispatch(publishReview(id, authData, error));
   }
 });

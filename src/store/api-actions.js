@@ -26,9 +26,12 @@ export const login = ({login: email, password}) => (dispatch, _getState, api) =>
 );
 
 export const publishReview = (id, {reviewRating, reviewText}, error) => (dispatch, _getState, api) => (
-  api.post(`/comments/${id}`, {ratin: reviewRating, comment: reviewText})
+  api.post(`/comments/${id}`, {rating: reviewRating, comment: reviewText})
   .then(() => dispatch(redirectToRoute(`/films/${id}`)))
-  .catch(() => {
-    return error;
+  .catch((err) => {
+    // console.log(err);
+    if (err) {
+      dispatch(error);
+    }
   })
 );

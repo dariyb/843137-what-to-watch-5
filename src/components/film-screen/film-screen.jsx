@@ -8,8 +8,11 @@ import Tabs from "../tabs/tabs";
 import MovieOverview from "../movie-overview/movie-overview";
 import MovieDetails from "../movie-details/movie-details";
 import MoviewReviews from "../movie-reviews/movie-reviews";
-import {TABS, tabsFilmScreen} from "../../utils";
+import {TABS, tabsFilmScreen, getFilmForId} from "../../utils";
 import withMovieList from "../../hocs/with-movie-list/with-movie-list";
+import {fetchFilmComments} from "../../store/api-actions";
+import {connect} from 'react-redux';
+import {getAuthStatus} from "../../store/reducers/root-reducer";
 
 const MovieListMyListWrapper = withMovieList(MovieList);
 
@@ -18,7 +21,15 @@ const TabsWrapper = withActiveTab(Tabs);
 const SIMILAR_FILMS = 4;
 
 const FilmScreen = (props) => {
-  const {films, onFilmCardClick, onLogoClick, onAddReviewClick, onPlayClick, onMyListClick} = props;
+  const {films, onFilmCardClick, onLogoClick, onAddReviewClick, onPlayClick, onMyListClick, isAuthorised, reviews, onLoad} = props;
+
+  const idFilm = props.match.params.id;
+  const film = getFilmForId(idFilm, films);
+  const {backgroundPoster, title, genre, releaseDate, poster} = film;
+
+  React.useEffect(() => {
+    onLoad(film.id);
+  }, [film.id]);
 
   const getMoreLikeThis = (movies, currentFilm) => {
     const similarMovies = movies.filter((movie) => movie.genre === currentFilm.genre);
@@ -38,7 +49,7 @@ const FilmScreen = (props) => {
       <section className="movie-card movie-card--full">
         <div className="movie-card__hero">
           <div className="movie-card__bg">
-            <img src={films[0].backgroundPoster} alt={films[0].title} />
+            <img src={backgroundPoster} alt={title} />
           </div>
 
           <h1 className="visually-hidden">WTW</h1>
@@ -61,14 +72,14 @@ const FilmScreen = (props) => {
 
           <div className="movie-card__wrap">
             <div className="movie-card__desc">
-              <h2 className="movie-card__title">{films[0].title}</h2>
+              <h2 className="movie-card__title">{title}</h2>
               <p className="movie-card__meta">
-                <span className="movie-card__genre">{films[0].genre}</span>
-                <span className="movie-card__year">{films[0].releaseDate}</span>
+                <span className="movie-card__genre">{genre}</span>
+                <span className="movie-card__year">{releaseDate}</span>
               </p>
 
               <div className="movie-card__buttons">
-                <button className="btn btn--play movie-card__button" type="button" onClick={onPlayClick}>
+                <button className="btn btn--play movie-card__button" type="button" onClick={() => onPlayClick(film.id)}>
                   <svg viewBox="0 0 19 19" width="19" height="19">
                     <use xlinkHref="#play-s"></use>
                   </svg>
@@ -80,7 +91,12 @@ const FilmScreen = (props) => {
                   </svg>
                   <span>My list</span>
                 </button>
-                <a onClick={onAddReviewClick} className="btn movie-card__button">Add review</a>
+                {
+                  isAuthorised ?
+                    <a onClick={() => onAddReviewClick(film.id)} className="btn movie-card__button">Add review</a>
+                    :
+                    ``
+                }
               </div>
             </div>
           </div>
@@ -89,21 +105,21 @@ const FilmScreen = (props) => {
         <div className="movie-card__wrap movie-card__translate-top">
           <div className="movie-card__info">
             <div className="movie-card__poster movie-card__poster--big">
-              <img src={films[0].poster} alt={films[0].title} width="218" height="327" />
+              <img src={poster} alt={title} width="218" height="327" />
             </div>
 
             <div className="movie-card__desc">
               <TabsWrapper
-                films={films}
+                film={film}
                 variantTabs={tabsFilmScreen}
-                showActiveTab = {(activeNavTab, movies) => {
+                showActiveTab = {(activeNavTab, movie) => {
                   switch (activeNavTab) {
                     case TABS.OVERVIEW:
-                      return <MovieOverview films={movies}/>;
+                      return <MovieOverview film={movie}/>;
                     case TABS.DETAILS:
-                      return <MovieDetails films={movies}/>;
+                      return <MovieDetails film={movie}/>;
                     case TABS.REVIEWS:
-                      return <MoviewReviews films={movies}/>;
+                      return <MoviewReviews film={movie} reviews={reviews}/>;
                   }
                   return null;
                 }}
@@ -119,7 +135,8 @@ const FilmScreen = (props) => {
 
           <MovieListMyListWrapper
             films={similarGenreFilms}
-            onFilmCardClick={onFilmCardClick}/>
+            onFilmCardClick={onFilmCardClick}
+          />
         </section>
 
         <FooterScreen onLogoClick={onLogoClick}/>
@@ -135,6 +152,27 @@ FilmScreen.propTypes = {
   onAddReviewClick: PropTypes.func.isRequired,
   onPlayClick: PropTypes.func.isRequired,
   onMyListClick: PropTypes.func.isRequired,
+  isAuthorised: PropTypes.bool.isRequired,
+  reviews: PropTypes.array,
+  onLoad: PropTypes.func.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    })
+  }),
 };
 
-export default FilmScreen;
+const mapStatetoProps = (state) => ({
+  isAuthorised: getAuthStatus(state),
+  reviews: state.DATA.comments,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  onLoad(authData) {
+    dispatch(fetchFilmComments(authData));
+  }
+});
+
+export {FilmScreen};
+
+export default connect(mapStatetoProps, mapDispatchToProps)(FilmScreen);

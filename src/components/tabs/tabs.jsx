@@ -1,11 +1,11 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
-import {propsForFilms} from "../../types";
+// import {propsForFilms} from "../../types";
 
 const tabs = [`Overview`, `Details`, `Reviews`];
 
 const Tabs = (props) => {
-  const {films, showActiveTab} = props;
+  const {film, showActiveTab} = props;
 
   return (
     <Fragment>
@@ -21,13 +21,13 @@ const Tabs = (props) => {
           )}
         </ul>
       </nav>
-      {showActiveTab(props.isActive, films)}
+      {showActiveTab(props.isActive, film)}
     </Fragment>
   );
 };
 
 Tabs.propTypes = {
-  films: PropTypes.arrayOf(propsForFilms).isRequired,
+  film: PropTypes.object.isRequired,
   isActive: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   showActiveTab: PropTypes.func.isRequired,

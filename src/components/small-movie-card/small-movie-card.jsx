@@ -17,7 +17,9 @@ const SmallMovieCard = (props) => {
           evt.preventDefault();
           onMouseLeave();
         }}
-        onClick={onFilmCardClick}
+        onClick={() => {
+          onFilmCardClick(film.id);
+        }}
       >
         {isVideoPlaying ?
           <VideoPlayer

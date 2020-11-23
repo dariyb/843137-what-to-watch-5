@@ -4,6 +4,7 @@ const ActionType = {
   LOAD_FILMS: `LOAD_FILMS`,
   REQUIRED_AUTHORIZATION: `REQUIRED_AUTHORIZATION`,
   REDIRECT_TO_ROUTE: `REDIRECT_TO_ROUTE`,
+  LOAD_COMMENTS: `LOAD_COMMENTS`,
 };
 
 const ActionCreator = {
@@ -30,4 +31,9 @@ const redirectToRoute = (url) => ({
   payload: url,
 });
 
-export {ActionType, ActionCreator, loadFilms, requireAuthorization, redirectToRoute};
+const loadFilmComments = (comments) => ({
+  type: ActionType.LOAD_COMMENTS,
+  payload: comments,
+});
+
+export {ActionType, ActionCreator, loadFilms, requireAuthorization, redirectToRoute, loadFilmComments};

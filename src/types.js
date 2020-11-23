@@ -17,13 +17,14 @@ const propsForFilms = PropTypes.shape({
 });
 
 const propsForReviews = PropTypes.shape({
-  film: PropTypes.string.isRequired,
-  review: PropTypes.arrayOf(PropTypes.shape({
-    reviewText: PropTypes.string.isRequired,
-    reviewRating: PropTypes.number.isRequired,
-    reviewAuthor: PropTypes.string.isRequired,
-    reviewDate: PropTypes.string.isRequired,
-  }))
+  id: PropTypes.number.isRequired,
+  rating: PropTypes.number.isRequired,
+  comment: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  user: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+  })
 });
 
 export {propsForFilms, propsForReviews};

@@ -9,6 +9,7 @@ const withMovieList = (Component) => {
 
       this.state = {
         activeFilm: ``,
+        id: 0,
       };
 
       this.onActiveMovie = this.onActiveMovie.bind(this);
@@ -18,7 +19,10 @@ const withMovieList = (Component) => {
 
     onActiveMovie(film) {
 
-      this.setState({activeFilm: film.title});
+      this.setState({
+        activeFilm: film.title,
+        id: film.id,
+      });
     }
 
     leaveActiveFilm() {

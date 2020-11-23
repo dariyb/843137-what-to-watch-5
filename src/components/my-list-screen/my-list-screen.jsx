@@ -9,6 +9,7 @@ const MovieListMyListWrapper = withMovieList(MovieList);
 
 const MyListScreen = (props) => {
   const {films, onFilmCardClick, onLogoClick} = props;
+
   return (
     <React.Fragment>
       <div className="user-page">
@@ -48,6 +49,7 @@ MyListScreen.propTypes = {
   onFilmCardClick: PropTypes.func.isRequired,
   onLogoClick: PropTypes.func.isRequired,
   films: PropTypes.arrayOf(propsForFilms).isRequired,
+
 };
 
 export default MyListScreen;

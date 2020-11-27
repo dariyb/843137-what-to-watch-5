@@ -1,14 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {propsForFilms} from "../../types";
+import Avatar from "../avatar/avatar";
 import MovieList from "../movie-list/movie-list";
 import FooterScreen from "../footer-screen/footer-screen";
 import withMovieList from "../../hocs/with-movie-list/with-movie-list";
+import {returnFavFilms} from "../../utils";
 
 const MovieListMyListWrapper = withMovieList(MovieList);
 
 const MyListScreen = (props) => {
-  const {films, onFilmCardClick, onLogoClick} = props;
+  const {films, onFilmCardClick, onLogoClick, onMyListClick} = props;
+
+  const favFilms = returnFavFilms(films);
+
 
   return (
     <React.Fragment>
@@ -25,9 +30,7 @@ const MyListScreen = (props) => {
           <h1 className="page-title user-page__title">My list</h1>
 
           <div className="user-block">
-            <div className="user-block__avatar">
-              <img src="/img/avatar.jpg" alt="User avatar" width="63" height="63" />
-            </div>
+            <Avatar onMyListClick={onMyListClick}/>
           </div>
         </header>
 
@@ -35,7 +38,7 @@ const MyListScreen = (props) => {
           <h2 className="catalog__title visually-hidden">Catalog</h2>
 
           <MovieListMyListWrapper
-            films={films}
+            films={favFilms}
             onFilmCardClick={onFilmCardClick}/>
         </section>
 
@@ -49,6 +52,7 @@ MyListScreen.propTypes = {
   onFilmCardClick: PropTypes.func.isRequired,
   onLogoClick: PropTypes.func.isRequired,
   films: PropTypes.arrayOf(propsForFilms).isRequired,
+  onMyListClick: PropTypes.func.isRequired,
 
 };
 

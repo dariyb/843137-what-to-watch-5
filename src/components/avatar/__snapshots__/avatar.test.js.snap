@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Avatar Render Avatar with auth 1`] = `
+<div
+  className="user-block__avatar"
+>
+  <img
+    alt="User avatar"
+    height="63"
+    onClick={[Function]}
+    width="63"
+  />
+</div>
+`;

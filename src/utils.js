@@ -95,5 +95,21 @@ const getFilmForId = (filmId, films) => {
   return films.find((film) => film.id === Number(filmId));
 };
 
+const returnFavFilms = (films) => {
+  return films.filter((film) => film.isFavorite === true);
+};
 
-export {getTextScore, TABS, tabsFilmScreen, extend, tabsFilmGenres, getFilmsByGenre, INITIAL_NUMBER_OF_FILMS, returnLeftTime, AuthorizationStatus, adaptFilmToClient, getFilmForId};
+const favoriteStatus = (isFavorite) => {
+  if (isFavorite) {
+    return 0;
+  } else {
+    return 1;
+  }
+};
+
+const returnUpdatedFilm = (films, changedFilm) => {
+  return films.map((film) => film.id === changedFilm.id ? changedFilm : film);
+};
+
+
+export {getTextScore, TABS, tabsFilmScreen, extend, tabsFilmGenres, getFilmsByGenre, INITIAL_NUMBER_OF_FILMS, returnLeftTime, AuthorizationStatus, adaptFilmToClient, getFilmForId, favoriteStatus, returnFavFilms, returnUpdatedFilm};

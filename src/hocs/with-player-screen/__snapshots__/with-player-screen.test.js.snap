@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withPlayerScreen is rendered correctly 1`] = `
+<video
+  className="player__video"
+  onTimeUpdate={[Function]}
+  poster="/img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+/>
+`;

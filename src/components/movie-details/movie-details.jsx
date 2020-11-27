@@ -1,6 +1,5 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
-// import {propsForFilms} from "../../types";
 
 const MovieDetails = (props) => {
   const {film} = props;

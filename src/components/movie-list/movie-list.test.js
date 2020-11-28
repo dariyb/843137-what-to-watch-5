@@ -12,6 +12,7 @@ it(`Render MovieList`, () => {
         activeNumberOfFilms={8}
         onMouseEnter={noop}
         onMouseLeave={noop}
+        activeFilm={`Bronson`}
       />
   )
   .toJSON();

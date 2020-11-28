@@ -99,7 +99,7 @@ it(`On add-review in film screen should click`, () => {
 
   );
 
-  const addReviewButton = filmScreen.find(`.add-review`);
+  const addReviewButton = filmScreen.find(`.movie-card__button`).at(2);
   addReviewButton.simulate(`click`);
   expect(onAddReviewClick).toHaveBeenCalledTimes(1);
 });

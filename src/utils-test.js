@@ -1,5 +1,7 @@
 import configureMockStore from "redux-mock-store";
 
+const variantTabs = [`Overview`, `Details`, `Reviews`];
+
 const mockStore = configureMockStore();
 const store = mockStore({
   USER: {
@@ -321,4 +323,4 @@ const activeStateSignIn = {
   password: ``,
 };
 
-export {films, film, noop, noopWithId, store, storeAuth, userData, match, reviews, activeState, activeStateSignIn};
+export {films, film, noop, noopWithId, store, storeAuth, userData, match, reviews, activeState, activeStateSignIn, variantTabs};

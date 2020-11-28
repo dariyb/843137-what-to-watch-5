@@ -2,9 +2,7 @@ import React from "react";
 import renderer from "react-test-renderer";
 import PropTypes from "prop-types";
 import withActiveTab from "./with-tabs";
-import {film, reviews} from "../../utils-test";
-
-const variantTabs = [`Overview`, `Details`, `Reviews`];
+import {film, reviews, variantTabs, noop} from "../../utils-test";
 
 const MockComponent = (props) => {
   const {children} = props;

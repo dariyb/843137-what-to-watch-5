@@ -15,7 +15,7 @@ describe(`Render SmallMovieCard`, () => {
             onMouseEnter={noop}
             onMouseLeave={noop}
             isVideoPlaying={true}
-            filmPreview
+            filmPreview={film.filmPreview}
           />
         </MemoryRouter>
         , {
@@ -39,6 +39,7 @@ describe(`Render SmallMovieCard`, () => {
             onMouseEnter={noop}
             onMouseLeave={noop}
             isVideoPlaying={false}
+            filmPreview={film.filmPreview}
           />
         </MemoryRouter>
         , {

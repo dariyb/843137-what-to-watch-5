@@ -316,4 +316,9 @@ const activeState = {
   error: false,
 };
 
-export {films, film, noop, noopWithId, store, storeAuth, userData, match, reviews, activeState};
+const activeStateSignIn = {
+  login: ``,
+  password: ``,
+};
+
+export {films, film, noop, noopWithId, store, storeAuth, userData, match, reviews, activeState, activeStateSignIn};

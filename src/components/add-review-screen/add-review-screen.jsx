@@ -36,7 +36,7 @@ const AddReviewScreen = (props) => {
           <nav className="breadcrumbs">
             <ul className="breadcrumbs__list">
               <li className="breadcrumbs__item">
-                <a onClick={onFilmTitleClick} className="breadcrumbs__link">{title}</a>
+                <a onClick={onFilmTitleClick} className="breadcrumbs__link title">{title}</a>
               </li>
               <li className="breadcrumbs__item">
                 <a className="breadcrumbs__link">Add review</a>

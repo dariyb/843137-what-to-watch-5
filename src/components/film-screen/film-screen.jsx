@@ -103,7 +103,7 @@ const FilmScreen = (props) => {
                 </button>
                 {
                   isAuthorised ?
-                    <a onClick={() => onAddReviewClick(film.id)} className="btn movie-card__button">Add review</a>
+                    <a onClick={() => onAddReviewClick(film.id)} className="btn movie-card__button add-review">Add review</a>
                     :
                     ``
                 }

@@ -57,6 +57,7 @@ exports[`Render sign-in screen 1`] = `
             name="login"
             onChange={[Function]}
             placeholder="Email address"
+            required={true}
             type="email"
           />
           <label
@@ -75,6 +76,7 @@ exports[`Render sign-in screen 1`] = `
             name="password"
             onChange={[Function]}
             placeholder="Password"
+            required={true}
             type="password"
           />
           <label

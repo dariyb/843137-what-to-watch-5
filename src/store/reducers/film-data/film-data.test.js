@@ -7,8 +7,6 @@ import {films, reviews, film, filmFromServer, filmChanged} from "../../../utils-
 import {returnUpdatedFilm} from "../../../utils";
 
 const api = createAPI(() => {});
-const apiMock = new MockAdapter(api);
-const dispatch = jest.fn();
 
 const changedFilm = returnUpdatedFilm(films, filmChanged);
 
@@ -87,6 +85,8 @@ it(`Return updated promo film after load and change`, () => {
 
 describe(`Async operation work correctly`, () => {
   it(`Should make correct API call to films`, () => {
+    const apiMock = new MockAdapter(api);
+    const dispatch = jest.fn();
     const filmsLoader = fetchFilmsList();
 
     apiMock
@@ -104,6 +104,8 @@ describe(`Async operation work correctly`, () => {
   });
 
   it(`Should make correct API call to comments`, () => {
+    const apiMock = new MockAdapter(api);
+    const dispatch = jest.fn();
     const commentsLoader = fetchFilmComments();
     const commentsUrl = `/comments`;
     const url = new RegExp(`${commentsUrl}/*`);
@@ -123,6 +125,8 @@ describe(`Async operation work correctly`, () => {
   });
 
   it(`Should make correct API call to promo film`, () => {
+    const apiMock = new MockAdapter(api);
+    const dispatch = jest.fn();
     const filmPromoLoader = fetchPromoFilm();
 
     apiMock

@@ -41,7 +41,7 @@ it(`On title should click`, () => {
 
   );
 
-  const titleLink = addReviewScreen.find(`.breadcrumbs__link.title`);
+  const titleLink = addReviewScreen.find(`.breadcrumbs__link`).at(0);
   titleLink.simulate(`click`);
   expect(onTitleClick).toHaveBeenCalledTimes(1);
 });

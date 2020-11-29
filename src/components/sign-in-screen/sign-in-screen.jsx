@@ -42,7 +42,8 @@ const SignInScreen = (props) => {
                   placeholder="Email address"
                   name="login"
                   id="user-email"
-                  onChange={props.onChange} />
+                  onChange={props.onChange}
+                  required />
                 <label className="sign-in__label visually-hidden" htmlFor="user-email">Email address</label>
               </div>
               <div className="sign-in__field">
@@ -51,7 +52,8 @@ const SignInScreen = (props) => {
                   placeholder="Password"
                   name="password"
                   id="user-password"
-                  onChange={props.onChange} />
+                  onChange={props.onChange}
+                  required />
                 <label className="sign-in__label visually-hidden" htmlFor="user-password">Password</label>
               </div>
             </div>

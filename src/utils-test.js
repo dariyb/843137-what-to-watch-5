@@ -265,7 +265,7 @@ const film = {
   ratingAmount: 350,
   director: `Dan Desk`,
   cast: [`Kim Check`, `Alan Rickman`, `Peter Brower`],
-  runningTime: 50,
+  runningTime: 40,
   filmPreview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
   id: 3,
   backgroundColor: `#73B39A`,
@@ -323,4 +323,53 @@ const activeStateSignIn = {
   password: ``,
 };
 
-export {films, film, noop, noopWithId, store, storeAuth, userData, match, reviews, activeState, activeStateSignIn, variantTabs};
+const filmFromServer = {
+  // eslint-disable-next-line camelcase
+  background_color: `#73B39A`,
+  // eslint-disable-next-line camelcase
+  background_image: `/img/bg-header.jpg`,
+  description: `FBI agent tries to solve murders all around the USA`,
+  director: `Dan Desk`,
+  genre: `Mystery`,
+  id: 3,
+  // eslint-disable-next-line camelcase
+  is_favorite: false,
+  name: `Mind Hunter`,
+  // eslint-disable-next-line camelcase
+  poster_image: `/img/the-grand-budapest-hotel-poster.jpg`,
+  // eslint-disable-next-line camelcase
+  preview_image: `/img/mindhunter.jpg`,
+  // eslint-disable-next-line camelcase
+  preview_video_link: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+  rating: 10.0,
+  released: 2005,
+  // eslint-disable-next-line camelcase
+  run_time: 40,
+  // eslint-disable-next-line camelcase
+  scores_count: 350,
+  starring: [`Kim Check`, `Alan Rickman`, `Peter Brower`],
+  // eslint-disable-next-line camelcase
+  video_link: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+};
+
+const filmChanged = {
+  title: `Mind Hunter`,
+  genre: `Mystery`,
+  releaseDate: 2005,
+  poster: `/img/the-grand-budapest-hotel-poster.jpg`,
+  preview: `/img/mindhunter.jpg`,
+  backgroundPoster: `/img/bg-header.jpg`,
+  description: `FBI agent tries to solve murders all around the USA`,
+  rating: 10.0,
+  ratingAmount: 350,
+  director: `Dan Desk`,
+  cast: [`Kim Check`, `Alan Rickman`, `Peter Brower`],
+  runningTime: 40,
+  filmPreview: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+  id: 3,
+  backgroundColor: `#73B39A`,
+  fullVideo: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+  isFavorite: true,
+};
+
+export {films, film, noop, noopWithId, store, storeAuth, userData, match, reviews, activeState, activeStateSignIn, variantTabs, filmFromServer, filmChanged};

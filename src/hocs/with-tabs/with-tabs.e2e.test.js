@@ -2,7 +2,7 @@ import React from "react";
 import Enzyme, {shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import withActiveTab from "./with-tabs";
-import {film, reviews, variantTabs, noop} from "../../utils-test";
+import {film, reviews, variantTabs} from "../../utils-test";
 
 Enzyme.configure({
   adapter: new Adapter(),

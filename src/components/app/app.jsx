@@ -21,14 +21,14 @@ const FilmScreenWrapper = withRouter(FilmScreen);
 const AddReviewWrapper = withRouter(AddReviewScreen);
 
 const App = (props) => {
-  const {films} = props;
+  const {films, film} = props;
 
   return (
     <BrowserRouter history={browserHistory}>
       <Switch>
         <Route exact path="/"
           render={({history}) => (
-            <MainScreen films={films}
+            <MainScreen films={films} film={film}
               onFilmCardClick={(id) => history.push(`/films/${id}`)}
               onMyListClick={() => history.push(`/mylist`)}
               onPlayClick={(id) => history.push(`/player/${id}`)}
@@ -49,6 +49,7 @@ const App = (props) => {
               <MyListScreen films={films}
                 onFilmCardClick={(id) => history.push(`/films/${id}`)}
                 onLogoClick={() => history.push(`/`)}
+                onMyListClick={() => history.push(`/mylist`)}
               />
             );
           }}
@@ -71,6 +72,7 @@ const App = (props) => {
                 onLogoClick={() => history.push(`/`)}
                 onFilmCardClick={(id) => history.push(`/films/${id}`)}
                 onFilmTitleClick={() => history.goBack()}
+                onMyListClick={() => history.push(`/mylist`)}
               />
             );
           }}
@@ -90,6 +92,7 @@ const App = (props) => {
 
 App.propTypes = {
   films: PropTypes.arrayOf(propsForFilms),
+  film: propsForFilms,
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired
@@ -99,6 +102,7 @@ App.propTypes = {
 
 const mapStatetoProps = ({DATA}) => ({
   films: DATA.films,
+  film: DATA.film,
 });
 
 export {App};

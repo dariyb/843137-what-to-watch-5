@@ -1,10 +1,10 @@
-import {extend} from "../../../utils";
+import {extend, returnUpdatedFilm} from "../../../utils";
 import {ActionType} from "../../action";
-// import films from "../../../mocks/films";
 
 const initialState = {
   films: [],
   comments: [],
+  film: {},
 };
 
 const filmData = (state = initialState, action) => {
@@ -16,6 +16,18 @@ const filmData = (state = initialState, action) => {
     case ActionType.LOAD_COMMENTS:
       return extend(state, {
         comments: action.payload,
+      });
+    case ActionType.LOAD_PROMO_FILM:
+      return extend(state, {
+        film: action.payload,
+      });
+    case ActionType.UPDATE_FILM:
+      return extend(state, {
+        films: returnUpdatedFilm(state.films, action.payload),
+      });
+    case ActionType.UPDATE_PROMO_FILM:
+      return extend(state, {
+        film: action.payload,
       });
   }
   return state;

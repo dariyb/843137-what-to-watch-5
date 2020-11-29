@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {propsForFilms} from "../../types";
+import Avatar from "../avatar/avatar";
 import MovieList from "../movie-list/movie-list";
 import FooterScreen from "../footer-screen/footer-screen";
 import withActiveTab from "../../hocs/with-tabs/with-tabs";
@@ -8,11 +9,13 @@ import Tabs from "../tabs/tabs";
 import MovieOverview from "../movie-overview/movie-overview";
 import MovieDetails from "../movie-details/movie-details";
 import MoviewReviews from "../movie-reviews/movie-reviews";
+import {Link} from 'react-router-dom';
 import {TABS, tabsFilmScreen, getFilmForId} from "../../utils";
 import withMovieList from "../../hocs/with-movie-list/with-movie-list";
 import {fetchFilmComments} from "../../store/api-actions";
 import {connect} from 'react-redux';
 import {getAuthStatus} from "../../store/reducers/root-reducer";
+import {addPromoToFavorite} from "../../store/api-actions";
 
 const MovieListMyListWrapper = withMovieList(MovieList);
 
@@ -21,7 +24,7 @@ const TabsWrapper = withActiveTab(Tabs);
 const SIMILAR_FILMS = 4;
 
 const FilmScreen = (props) => {
-  const {films, onFilmCardClick, onLogoClick, onAddReviewClick, onPlayClick, onMyListClick, isAuthorised, reviews, onLoad} = props;
+  const {films, onFilmCardClick, onLogoClick, onAddReviewClick, onPlayClick, onMyListClick, isAuthorised, reviews, onLoad, onFavClick} = props;
 
   const idFilm = props.match.params.id;
   const film = getFilmForId(idFilm, films);
@@ -64,9 +67,12 @@ const FilmScreen = (props) => {
             </div>
 
             <div className="user-block">
-              <div className="user-block__avatar">
-                <img src="/img/avatar.jpg" alt="User avatar" width="63" height="63" />
-              </div>
+              {
+                isAuthorised ?
+                  <Avatar onMyListClick={onMyListClick}/>
+                  :
+                  <Link to='/login' className="user-block__link">Sign in</Link>
+              }
             </div>
           </header>
 
@@ -85,7 +91,11 @@ const FilmScreen = (props) => {
                   </svg>
                   <span>Play</span>
                 </button>
-                <button className="btn btn--list movie-card__button" type="button" onClick={onMyListClick}>
+                <button className="btn btn--list movie-card__button" type="button"
+                  onClick={() => {
+                    onFavClick(film.id, film.isFavorite);
+                    onMyListClick();
+                  }}>
                   <svg viewBox="0 0 19 20" width="19" height="20">
                     <use xlinkHref="#add"></use>
                   </svg>
@@ -153,6 +163,7 @@ FilmScreen.propTypes = {
   onPlayClick: PropTypes.func.isRequired,
   onMyListClick: PropTypes.func.isRequired,
   isAuthorised: PropTypes.bool.isRequired,
+  onFavClick: PropTypes.func.isRequired,
   reviews: PropTypes.array,
   onLoad: PropTypes.func.isRequired,
   match: PropTypes.shape({
@@ -170,6 +181,9 @@ const mapStatetoProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   onLoad(authData) {
     dispatch(fetchFilmComments(authData));
+  },
+  onFavClick(authData, favBool) {
+    dispatch(addPromoToFavorite(authData, favBool));
   }
 });
 

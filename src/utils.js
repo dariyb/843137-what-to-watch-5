@@ -95,5 +95,39 @@ const getFilmForId = (filmId, films) => {
   return films.find((film) => film.id === Number(filmId));
 };
 
+const returnFavFilms = (films) => {
+  return films.filter((film) => film.isFavorite === true);
+};
 
-export {getTextScore, TABS, tabsFilmScreen, extend, tabsFilmGenres, getFilmsByGenre, INITIAL_NUMBER_OF_FILMS, returnLeftTime, AuthorizationStatus, adaptFilmToClient, getFilmForId};
+const favoriteStatus = (isFavorite) => {
+  if (isFavorite) {
+    return 0;
+  } else {
+    return 1;
+  }
+};
+
+const returnUpdatedFilm = (films, changedFilm) => {
+  return films.map((film) => film.id === changedFilm.id ? changedFilm : film);
+};
+
+const runningFilmTime = (runnTime) => {
+  if (runnTime > 60) {
+    let hour = Math.floor((runnTime / 60));
+    let minutes = Math.floor(runnTime - (hour * 60));
+    if (minutes > 60) {
+      hour = Math.floor(hour + (minutes / 60));
+      minutes = Math.floor(minutes - (minutes / 60));
+    }
+    if (minutes < 60) {
+      minutes = Math.floor(minutes);
+    }
+    return `${hour}h ${minutes}m`;
+  } else if (runnTime < 60) {
+    return `${runnTime}m`;
+  }
+  return `${runnTime}h`;
+};
+
+
+export {getTextScore, TABS, tabsFilmScreen, extend, tabsFilmGenres, getFilmsByGenre, INITIAL_NUMBER_OF_FILMS, returnLeftTime, AuthorizationStatus, adaptFilmToClient, getFilmForId, favoriteStatus, returnFavFilms, returnUpdatedFilm, runningFilmTime};

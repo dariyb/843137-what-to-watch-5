@@ -40,6 +40,7 @@ const withReviewForm = (Component) => {
 
       return (
         <Component
+          {...this.props}
           onChangeRating={this._onChangeRating}
           onChangeText={this._onChangeText}
           currentRating={this.state.reviewRating}

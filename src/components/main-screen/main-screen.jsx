@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {propsForFilms} from "../../types";
+import Avatar from "../avatar/avatar";
 import MovieList from "../movie-list/movie-list";
 import FooterScreen from "../footer-screen/footer-screen";
 import withActiveTab from "../../hocs/with-tabs/with-tabs";
@@ -10,13 +11,14 @@ import withButton from "../../hocs/with-button/with-button";
 import withMovieList from "../../hocs/with-movie-list/with-movie-list";
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+import {addPromoToFavorite} from "../../store/api-actions";
 import {getAuthStatus} from "../../store/reducers/root-reducer";
 
 const GenresListWrapper = withActiveTab(GenresList);
 const MovieListWarpper = withButton(withMovieList(MovieList));
 
 const MainScreen = (props) => {
-  const {films, onFilmCardClick, onMyListClick, onPlayClick, onLogoClick, isAuthorised} = props;
+  const {films, onFilmCardClick, onMyListClick, onPlayClick, onLogoClick, isAuthorised, film, onFavClick} = props;
 
   return (
     <React.Fragment>
@@ -24,7 +26,7 @@ const MainScreen = (props) => {
         <React.Fragment>
           <section className="movie-card">
             <div className="movie-card__bg">
-              <img src={films[0].backgroundPoster} alt={films[0].title} />
+              <img src={film.backgroundPoster} alt={film.title} />
             </div>
 
             <h1 className="visually-hidden">WTW</h1>
@@ -41,9 +43,7 @@ const MainScreen = (props) => {
               <div className="user-block">
                 {
                   isAuthorised ?
-                    <div className="user-block__avatar">
-                      <img src="/img/avatar.jpg" alt="User avatar" width="63" height="63" />
-                    </div>
+                    <Avatar onMyListClick={onMyListClick}/>
                     :
                     <Link to='/login' className="user-block__link">Sign in</Link>
                 }
@@ -53,24 +53,28 @@ const MainScreen = (props) => {
             <div className="movie-card__wrap">
               <div className="movie-card__info">
                 <div className="movie-card__poster">
-                  <img src={films[0].poster} alt={films[0].title} width="218" height="327" />
+                  <img src={film.poster} alt={film.title} width="218" height="327" />
                 </div>
 
                 <div className="movie-card__desc">
-                  <h2 className="movie-card__title">{films[0].title}</h2>
+                  <h2 className="movie-card__title">{film.title}</h2>
                   <p className="movie-card__meta">
-                    <span className="movie-card__genre">{films[0].genre}</span>
-                    <span className="movie-card__year">{films[0].releaseDate}</span>
+                    <span className="movie-card__genre">{film.genre}</span>
+                    <span className="movie-card__year">{film.releaseDate}</span>
                   </p>
 
                   <div className="movie-card__buttons">
-                    <button className="btn btn--play movie-card__button" type="button" onClick={() => onPlayClick(films[0].id)}>
+                    <button className="btn btn--play movie-card__button" type="button" onClick={() => onPlayClick(film.id)}>
                       <svg viewBox="0 0 19 19" width="19" height="19">
                         <use xlinkHref="#play-s"></use>
                       </svg>
                       <span>Play</span>
                     </button>
-                    <button className="btn btn--list movie-card__button" type="button" onClick={onMyListClick}>
+                    <button className="btn btn--list movie-card__button" type="button"
+                      onClick={() => {
+                        onFavClick(film.id, film.isFavorite);
+                        onMyListClick();
+                      }}>
                       <svg viewBox="0 0 19 20" width="19" height="20">
                         <use xlinkHref="#add"></use>
                       </svg>
@@ -110,12 +114,20 @@ const MainScreen = (props) => {
 
 MainScreen.propTypes = {
   films: PropTypes.arrayOf(propsForFilms).isRequired,
+  film: propsForFilms,
   onFilmCardClick: PropTypes.func.isRequired,
   onPlayClick: PropTypes.func.isRequired,
   onMyListClick: PropTypes.func.isRequired,
   onLogoClick: PropTypes.func.isRequired,
   isAuthorised: PropTypes.bool.isRequired,
+  onFavClick: PropTypes.func.isRequired,
 };
+
+const mapDispatchToProps = (dispatch) => ({
+  onFavClick(authData, favBool) {
+    dispatch(addPromoToFavorite(authData, favBool));
+  }
+});
 
 const mapStatetoProps = (state) => ({
   isAuthorised: getAuthStatus(state),
@@ -123,4 +135,4 @@ const mapStatetoProps = (state) => ({
 
 export {MainScreen};
 
-export default connect(mapStatetoProps)(MainScreen);
+export default connect(mapStatetoProps, mapDispatchToProps)(MainScreen);

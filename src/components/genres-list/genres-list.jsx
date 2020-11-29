@@ -1,7 +1,6 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
 import {propsForFilms} from "../../types";
-// import {tabsFilmGenres} from "../../utils";
 
 const GenresList = (props) => {
   const {films, filterFilmsList} = props;
@@ -12,7 +11,7 @@ const GenresList = (props) => {
       genres.push(movies[i].genre);
     }
     const uniqueGenres = new Set(genres);
-    return [`All genres`, ...uniqueGenres];
+    return [`All genres`, ...uniqueGenres].slice(0, 10);
   };
 
   return (

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {propsForFilms} from "../../types";
+import Avatar from "../avatar/avatar";
 import ReviewForm from "../review-form/review-form";
 import withReviewForm from "../../hocs/with-review-form/with-review-form";
 import {getFilmForId} from "../../utils";
@@ -8,7 +9,7 @@ import {getFilmForId} from "../../utils";
 const ReviewFormWrapper = withReviewForm(ReviewForm);
 
 const AddReviewScreen = (props) => {
-  const {films, onLogoClick, onFilmTitleClick} = props;
+  const {films, onLogoClick, onFilmTitleClick, onMyListClick} = props;
 
   const idFilm = props.match.params.id;
   const film = getFilmForId(idFilm, films);
@@ -44,9 +45,7 @@ const AddReviewScreen = (props) => {
           </nav>
 
           <div className="user-block">
-            <div className="user-block__avatar">
-              <img src="/img/avatar.jpg" alt="User avatar" width="63" height="63" />
-            </div>
+            <Avatar onMyListClick={onMyListClick}/>
           </div>
         </header>
 
@@ -67,6 +66,7 @@ AddReviewScreen.propTypes = {
   films: PropTypes.arrayOf(propsForFilms).isRequired,
   onLogoClick: PropTypes.func.isRequired,
   onFilmTitleClick: PropTypes.func.isRequired,
+  onMyListClick: PropTypes.func.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired

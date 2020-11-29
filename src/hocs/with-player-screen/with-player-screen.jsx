@@ -78,6 +78,8 @@ const withPlayerScreen = (Component) => {
 
     render() {
       const {films} = this.props;
+      const idFilm = this.props.match.params.id;
+      const film = getFilmForId(idFilm, films);
       return (
         <Component
           {...this.props}
@@ -92,7 +94,7 @@ const withPlayerScreen = (Component) => {
             ref={this._videoRef}
             onTimeUpdate={this._filmTimeLeft}
             className="player__video"
-            poster={films[0].preview}
+            poster={film.preview}
           />
         </Component>
       );

@@ -2,7 +2,7 @@ import React from "react";
 import renderer from "react-test-renderer";
 import PropTypes from "prop-types";
 import withActiveTab from "./with-tabs";
-import {film, reviews, variantTabs} from "../../utils-test";
+import {film, reviews, VARIANT_TABS} from "../../utils-test";
 
 const MockComponent = (props) => {
   const {children} = props;
@@ -28,7 +28,7 @@ it(`withActiveTab is rendered correctly`, () => {
     <MockComponentWrapped
       film={film}
       reviews={reviews}
-      variantTabs={variantTabs}
+      variantTabs={VARIANT_TABS}
     >
       <React.Fragment />
     </MockComponentWrapped>

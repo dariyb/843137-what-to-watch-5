@@ -1,6 +1,6 @@
 import configureMockStore from "redux-mock-store";
 
-const variantTabs = [`Overview`, `Details`, `Reviews`];
+const VARIANT_TABS = [`Overview`, `Details`, `Reviews`];
 
 const mockStore = configureMockStore();
 const store = mockStore({
@@ -372,4 +372,4 @@ const filmChanged = {
   isFavorite: true,
 };
 
-export {films, film, noop, noopWithId, store, storeAuth, userData, match, reviews, activeState, activeStateSignIn, variantTabs, filmFromServer, filmChanged};
+export {films, film, noop, noopWithId, store, storeAuth, userData, match, reviews, activeState, activeStateSignIn, VARIANT_TABS, filmFromServer, filmChanged};

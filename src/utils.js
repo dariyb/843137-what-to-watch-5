@@ -41,15 +41,15 @@ const TABS = {
   REVIEWS: `Reviews`
 };
 
-const tabsFilmScreen = [`Overview`, `Details`, `Reviews`];
-const tabsFilmGenres = [`All genres`, `Comedies`, `Crime`, `Documentary`, `Dramas`, `Horror`, `Kids&Family`, `Romance`, `Sci-Fi`, `Thrillers`];
+const TABS_FILM_SCREEN = [`Overview`, `Details`, `Reviews`];
+const TABS_FILM_GENRES = [`All genres`, `Comedies`, `Crime`, `Documentary`, `Dramas`, `Horror`, `Kids&Family`, `Romance`, `Sci-Fi`, `Thrillers`];
 
 const extend = (a, b) => {
   return Object.assign({}, a, b);
 };
 
 const getFilmsByGenre = (films, genre) => {
-  if (genre === tabsFilmGenres[0]) {
+  if (genre === TABS_FILM_GENRES[0]) {
     return films;
   }
   return films.filter((film) => film.genre === genre);
@@ -130,4 +130,4 @@ const runningFilmTime = (runnTime) => {
 };
 
 
-export {getTextScore, TABS, tabsFilmScreen, extend, tabsFilmGenres, getFilmsByGenre, INITIAL_NUMBER_OF_FILMS, returnLeftTime, AuthorizationStatus, adaptFilmToClient, getFilmForId, favoriteStatus, returnFavFilms, returnUpdatedFilm, runningFilmTime};
+export {getTextScore, TABS, TABS_FILM_SCREEN, TABS_FILM_GENRES, extend, getFilmsByGenre, INITIAL_NUMBER_OF_FILMS, returnLeftTime, AuthorizationStatus, adaptFilmToClient, getFilmForId, favoriteStatus, returnFavFilms, returnUpdatedFilm, runningFilmTime};

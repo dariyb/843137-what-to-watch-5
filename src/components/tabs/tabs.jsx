@@ -1,8 +1,7 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
 import {propsForFilms} from "../../types";
-
-const tabs = [`Overview`, `Details`, `Reviews`];
+import {TABS_FILM_SCREEN} from "../../utils";
 
 const Tabs = (props) => {
   const {film, showActiveTab} = props;
@@ -11,7 +10,7 @@ const Tabs = (props) => {
     <Fragment>
       <nav className="movie-nav movie-card__nav">
         <ul className="movie-nav__list">
-          {tabs.map((tab, i) =>
+          {TABS_FILM_SCREEN.map((tab, i) =>
             <li className={`movie-nav__item ${tab === props.isActive ? `movie-nav__item--active` : ``}`}
               key={`${i}-${tab}`}>
               <a href="#" className="movie-nav__link"

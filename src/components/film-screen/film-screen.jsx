@@ -10,7 +10,7 @@ import MovieOverview from "../movie-overview/movie-overview";
 import MovieDetails from "../movie-details/movie-details";
 import MoviewReviews from "../movie-reviews/movie-reviews";
 import {Link} from 'react-router-dom';
-import {TABS, tabsFilmScreen, getFilmForId} from "../../utils";
+import {TABS, TABS_FILM_SCREEN, getFilmForId} from "../../utils";
 import withMovieList from "../../hocs/with-movie-list/with-movie-list";
 import {fetchFilmComments} from "../../store/api-actions";
 import {connect} from 'react-redux';
@@ -121,7 +121,7 @@ const FilmScreen = (props) => {
             <div className="movie-card__desc">
               <TabsWrapper
                 film={film}
-                variantTabs={tabsFilmScreen}
+                variantTabs={TABS_FILM_SCREEN}
                 showActiveTab = {(activeNavTab, movie) => {
                   switch (activeNavTab) {
                     case TABS.OVERVIEW:

@@ -1,6 +1,4 @@
 const ActionType = {
-  CHANGE_GENRE: `CHANGE_GENRE`,
-  GET_CURRENT_GENRE_FILMS_LIST: `GET_CURRENT_GENRE_FILMS_LIST`,
   LOAD_FILMS: `LOAD_FILMS`,
   REQUIRED_AUTHORIZATION: `REQUIRED_AUTHORIZATION`,
   REDIRECT_TO_ROUTE: `REDIRECT_TO_ROUTE`,
@@ -9,17 +7,6 @@ const ActionType = {
   UPDATE_FILM: `UPDATE_FILM`,
   UPDATE_PROMO_FILM: `UPDATE_PROMO_FILM`,
   LOAD_USER_DATA: `LOAD_USER_DATA`,
-};
-
-const ActionCreator = {
-  changeGenre: (filter) => ({
-    type: ActionType.CHANGE_GENRE,
-    payload: filter,
-  }),
-  filterFilmsList: (filter) => ({
-    type: ActionType.GET_CURRENT_GENRE_FILMS_LIST,
-    payload: filter,
-  })
 };
 
 const loadFilms = (films) => ({
@@ -56,4 +43,4 @@ const loadUserData = (userInfo) => ({
 });
 
 
-export {ActionType, ActionCreator, loadFilms, requireAuthorization, redirectToRoute, loadFilmComments, loadPromoFilm, updateFilm, updatePromoFilm, loadUserData};
+export {ActionType, loadFilms, requireAuthorization, redirectToRoute, loadFilmComments, loadPromoFilm, updateFilm, updatePromoFilm, loadUserData};

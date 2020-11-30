@@ -21,6 +21,31 @@ const withPlayerScreen = (Component) => {
       this._filmTimeLeft = this._filmTimeLeft.bind(this);
     }
 
+    componentDidMount() {
+      const {films} = this.props;
+      const video = this._videoRef.current;
+
+      const idFilm = this.props.match.params.id;
+      const film = getFilmForId(idFilm, films);
+
+      video.src = film.filmPreview;
+      video.poster = film.preview;
+      video.play();
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+      const video = this._videoRef.current;
+
+      const {playFilm} = this.state;
+      if (this.state.playFilm !== prevState.playFilm) {
+        if (playFilm) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    }
+
     _onFullScreenClick(evt) {
       evt.preventDefault();
       const video = this._videoRef.current;
@@ -48,31 +73,6 @@ const withPlayerScreen = (Component) => {
         this.setState({
           playFilm: true
         });
-      }
-    }
-
-    componentDidMount() {
-      const {films} = this.props;
-      const video = this._videoRef.current;
-
-      const idFilm = this.props.match.params.id;
-      const film = getFilmForId(idFilm, films);
-
-      video.src = film.filmPreview;
-      video.poster = film.preview;
-      video.play();
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-      const video = this._videoRef.current;
-
-      const {playFilm} = this.state;
-      if (this.state.playFilm !== prevState.playFilm) {
-        if (playFilm) {
-          video.play();
-        } else {
-          video.pause();
-        }
       }
     }
 

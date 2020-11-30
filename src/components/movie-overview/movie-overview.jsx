@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
-import PropTypes from "prop-types";
 import {getTextScore} from "../../utils";
+import {propsForFilms} from "../../types";
 
 const MovieOverview = (props) => {
   const {film} = props;
@@ -27,7 +27,7 @@ const MovieOverview = (props) => {
 };
 
 MovieOverview.propTypes = {
-  film: PropTypes.object.isRequired,
+  film: propsForFilms,
 };
 
 export default MovieOverview;

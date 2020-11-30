@@ -73,7 +73,10 @@ SignInScreen.propTypes = {
   onLogoClick: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
-  activeState: PropTypes.object.isRequired,
+  activeState: PropTypes.shape({
+    login: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+  }),
 };
 
 

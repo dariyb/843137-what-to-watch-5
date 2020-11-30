@@ -1,5 +1,6 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
+import {propsForFilms} from "../../types";
 
 const tabs = [`Overview`, `Details`, `Reviews`];
 
@@ -26,7 +27,7 @@ const Tabs = (props) => {
 };
 
 Tabs.propTypes = {
-  film: PropTypes.object.isRequired,
+  film: propsForFilms,
   isActive: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   showActiveTab: PropTypes.func.isRequired,

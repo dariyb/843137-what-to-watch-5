@@ -23,7 +23,7 @@ const withActiveTab = (Component) => {
     }
   }
   WithActiveTab.propTypes = {
-    variantTabs: PropTypes.array.isRequired,
+    variantTabs: PropTypes.arrayOf(PropTypes.string).isRequired,
   };
 
   return WithActiveTab;

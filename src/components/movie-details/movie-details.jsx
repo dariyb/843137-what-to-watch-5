@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
-import PropTypes from "prop-types";
 import {runningFilmTime} from "../../utils";
+import {propsForFilms} from "../../types";
 
 const MovieDetails = (props) => {
   const {film} = props;
@@ -41,7 +41,7 @@ const MovieDetails = (props) => {
 };
 
 MovieDetails.propTypes = {
-  film: PropTypes.object.isRequired,
+  film: propsForFilms,
 };
 
 export default MovieDetails;

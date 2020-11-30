@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {propsForFilms} from "../../types";
+import {propsForFilms, propsForReviews} from "../../types";
 import Avatar from "../avatar/avatar";
 import MovieList from "../movie-list/movie-list";
 import FooterScreen from "../footer-screen/footer-screen";
@@ -164,7 +164,7 @@ FilmScreen.propTypes = {
   onMyListClick: PropTypes.func.isRequired,
   isAuthorised: PropTypes.bool.isRequired,
   onFavClick: PropTypes.func.isRequired,
-  reviews: PropTypes.array,
+  reviews: PropTypes.arrayOf(propsForReviews),
   onLoad: PropTypes.func.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({

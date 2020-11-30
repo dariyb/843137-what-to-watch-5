@@ -1,6 +1,7 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
+import {propsForReviews} from "../../types";
 
 const convertDate = (date) => {
   return moment(date).format(`MMMM, DD YYYY`);
@@ -44,7 +45,7 @@ const MoviewReviews = (props) => {
 };
 
 MoviewReviews.propTypes = {
-  reviews: PropTypes.array.isRequired,
+  reviews: PropTypes.arrayOf(propsForReviews),
 };
 
 export default MoviewReviews;
